@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>視覺藝術創作研究方法與《色彩之流》教學實踐整合探析</title>
-    <meta name="description" content="劉豐榮教授《視覺藝術創作研究方法之理論基礎探析》與高玉娟老師《色彩之流》大班幼兒觸覺教學實踐之理論對接與網頁整理。">
+    <meta name="description" content="劉豐榮教授《視覺藝術創作研究方法之理論基礎探析》與高玉娟老師《色彩之流》大班幼兒觸覺教學實踐之理論對接與現場照片紀錄。">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -231,6 +231,64 @@
         .card p {
             font-size: 0.92rem;
             color: var(--text-secondary);
+        }
+
+        /* Photo Gallery Grid & Cards */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 24px 0;
+        }
+
+        .photo-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .photo-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-emerald);
+            box-shadow: 0 12px 30px rgba(16, 185, 129, 0.25);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .photo-caption {
+            padding: 16px 20px;
+        }
+
+        .photo-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .photo-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+
+        .photo-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
         }
 
         /* Section Layout */
@@ -564,7 +622,8 @@
             <ul class="nav-links">
                 <li><a href="#section-1">1. 研究理論背景</a></li>
                 <li><a href="#section-2">2. 意象與理論素材</a></li>
-                <li><a href="#section-3">3. 三大注意力理論對接</a></li>
+                <li><a href="#section-3">3. 三大注意力理論</a></li>
+                <li><a href="#section-gallery">📷 課堂照片紀錄</a></li>
                 <li><a href="#section-4">4. 《色彩之流》行動研究</a></li>
                 <li><a href="#section-5">5. 幼兒鑑識與批評</a></li>
                 <li><a href="#section-6">6. 藝術vs科學對比</a></li>
@@ -582,7 +641,7 @@
             </div>
             <h1>視覺藝術創作研究方法之理論基礎探析：<br><span style="background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">大班幼兒《色彩之流》實踐教案之理論對接</span></h1>
             <p style="color: var(--text-secondary); max-width: 850px; font-size: 1.05rem; margin-top: 12px;">
-                本網頁將劉豐榮教授的「視覺藝術質化研究理論」與高玉娟老師於嘉義市大同國小實施之《色彩之流》大班幼兒觸覺與非牛頓流體教學案例進行深度對接，展現從理論建構到課堂行動研究的完美結合。
+                本網頁將劉豐榮教授的「視覺藝術質化研究理論」與高玉娟老師於嘉義市大同國小實施之《色彩之流》大班幼兒觸覺與非牛頓流體教學案例進行深度對接，並呈現真實課堂操作照片紀錄。
             </p>
             <div class="hero-meta">
                 <div class="meta-item">📚 理論架構：<strong>劉豐榮 教授《視覺藝術創作研究方法之理論基礎探析》</strong> (2004)</div>
@@ -630,10 +689,81 @@
             </div>
             <div class="card">
                 <div class="card-icon">🎭</div>
-                <h3>角色投射與自我認同</h3>
+                <h3>角色投射與認同</h3>
                 <p>幼兒命名自調顏色（如「彩虹果汁」），投射自我身份為「藝術家、科學家、廚師與跳舞家」。</p>
             </div>
         </div>
+
+        <!-- Section Gallery: 課堂照片紀錄 -->
+        <section id="section-gallery" class="section">
+            <div class="section-header">
+                <div class="section-badge emerald">📷</div>
+                <h2 class="section-title">《色彩之流》大班幼兒真實教學現場照片紀錄</h2>
+            </div>
+            <p>以下照片摘錄自高玉娟老師於嘉義市大同國小實施之《色彩之流》教案現場紀錄，完美佐證劉豐榮教授的質化藝術創作理論與三大注意力心理學：</p>
+
+            <div class="photo-grid">
+                <!-- Photo 1 -->
+                <div class="photo-card">
+                    <img src="images/photo_1.jpg" alt="幼兒感受非牛頓流體觸覺">
+                    <div class="photo-caption">
+                        <span class="photo-tag">照片 1：觸覺與適度不確定性</span>
+                        <div class="photo-title">抓取非牛頓流體感官探索</div>
+                        <div class="photo-desc">幼兒雙手抓起太白粉水，體驗「冰冰的、軟軟的、會流動又會變硬」的觸覺刺激（Berlyne 1971 適度不確定性）。</div>
+                    </div>
+                </div>
+
+                <!-- Photo 2 -->
+                <div class="photo-card">
+                    <img src="images/photo_2.jpg" alt="幼兒進行太白粉混色調配">
+                    <div class="photo-caption">
+                        <span class="photo-tag">照片 2：混色與審美探索</span>
+                        <div class="photo-title">「彩虹果汁」調色與色彩命名</div>
+                        <div class="photo-desc">幼兒在容器中混合顏料與太白粉，觀察顏色變化並為調配色彩命名「彩虹果汁」，展現審美探索心理參與。</div>
+                    </div>
+                </div>
+
+                <!-- Photo 3 -->
+                <div class="photo-card">
+                    <img src="images/photo_3.jpg" alt="控制性注意力滴流操作">
+                    <div class="photo-caption">
+                        <span class="photo-tag">照片 3：控制性注意發展</span>
+                        <div class="photo-title">工具操作與水量滴流控制</div>
+                        <div class="photo-desc">幼兒集中注意力觀察材料混合與滴流技巧（Schneider & Shiffrin 1977 控制性注意），學習調整水量與力道。</div>
+                    </div>
+                </div>
+
+                <!-- Photo 4 -->
+                <div class="photo-card">
+                    <img src="images/photo_4.jpg" alt="自動化創作與心流結果">
+                    <div class="photo-caption">
+                        <span class="photo-tag">照片 4：自動化創作與心流</span>
+                        <div class="photo-title">大理石紋色彩流動作品</div>
+                        <div class="photo-desc">幼兒邁向熟練的「自動化」混色創作，進入類似「心流 (Flow)」狀態，於紙面上留下斑斕流暢的造型。</div>
+                    </div>
+                </div>
+
+                <!-- Photo 5 -->
+                <div class="photo-card">
+                    <img src="images/photo_5.jpg" alt="創造性注意力彈性">
+                    <div class="photo-caption">
+                        <span class="photo-tag">照片 5：注意力彈性與聚焦</span>
+                        <div class="photo-title">專注滴流創作與角色投射</div>
+                        <div class="photo-desc">幼兒在觀察材料流動與聯想想像之間靈活轉換（Marschalek 1983），展現創造性注意力彈性。</div>
+                    </div>
+                </div>
+
+                <!-- Photo 6 -->
+                <div class="photo-card">
+                    <img src="images/photo_6.jpg" alt="多元角色體會與生活連結">
+                    <div class="photo-caption">
+                        <span class="photo-tag">照片 6：生活經驗與角色體驗</span>
+                        <div class="photo-title">「我是科學家、廚師與藝術家」</div>
+                        <div class="photo-desc">幼兒坐在地上體驗流體固體變化，將經驗連結至麵糊與果汁，並建立創作者角色自我認同。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Section 1: 背景與問題 -->
         <section id="section-1" class="section">
@@ -690,7 +820,7 @@
             </div>
         </section>
 
-        <!-- Section 3: 注意力理論對接 (新專區) -->
+        <!-- Section 3: 注意力理論對接 -->
         <section id="section-3" class="section">
             <div class="section-header">
                 <div class="section-badge emerald">3</div>
@@ -717,7 +847,7 @@
                     </button>
                     <div class="accordion-content">
                         <strong>核心觀點：</strong>注意力經歷從集中意識 efforts 的「控制性」邁向熟練慣性的「自動化」。<br>
-                        <strong>教學呈現：</strong>幼兒初期需「控制性注意」觀察水量與滴流技巧；隨著操作熟悉，開始「自動化」進行混色與造型創造，進入專注愉悅的「心流 (Flow)」創作狀態。
+                        <strong>教學呈現：</strong>幼兒初期需「控制性注意」觀察水量與滴流技巧；隨著操作熟悉，開始「自動化」進行混色與形狀創造，進入專注愉悅的「心流 (Flow)」創作狀態。
                     </div>
                 </div>
 
