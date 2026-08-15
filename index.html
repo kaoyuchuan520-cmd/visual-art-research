@@ -111,31 +111,28 @@
             background: rgba(110, 133, 117, 0.08);
         }
 
-        /* 🌐 語言切換選單按鈕 */
+        /* 🌐 語言切換選單按鈕 (純文字簡約風) */
         .lang-switcher {
             display: flex;
             align-items: center;
             background: #FFFFFF;
-            border: 2px solid var(--accent-sage);
-            border-radius: 24px;
-            padding: 4px;
-            box-shadow: 0 4px 12px rgba(110, 133, 117, 0.15);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 3px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
             flex-shrink: 0;
         }
 
         .lang-btn {
             background: transparent;
             border: none;
-            padding: 6px 14px;
-            font-size: 0.86rem;
-            font-weight: 700;
+            padding: 5px 14px;
+            font-size: 0.84rem;
+            font-weight: 600;
             color: var(--text-secondary);
-            border-radius: 18px;
+            border-radius: 16px;
             cursor: pointer;
             transition: all 0.25s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
         }
 
         .lang-btn:hover {
@@ -146,7 +143,7 @@
         .lang-btn.active {
             background: var(--accent-sage);
             color: #FFFFFF;
-            box-shadow: 0 3px 8px rgba(110, 133, 117, 0.35);
+            box-shadow: 0 2px 6px rgba(110, 133, 117, 0.3);
         }
 
         main {
@@ -629,7 +626,7 @@
                 padding: 6px 10px;
                 font-size: 0.8rem;
                 flex: 1;
-                justify-content: center;
+                text-align: center;
             }
 
             .nav-links {
@@ -724,11 +721,11 @@
                 <span>🎨</span> <span data-i18n="site_title">幼兒藝術教育價值論與《色彩之流》教學對接探析</span>
             </div>
 
-            <!-- 🌐 多國語言切換按鈕 -->
+            <!-- 🌐 多國語言切換按鈕（純文字簡約風） -->
             <div class="lang-switcher">
-                <button class="lang-btn active" onclick="switchLang('zh-TW')">🇹🇼 繁體中文</button>
-                <button class="lang-btn" onclick="switchLang('en')">🇺🇸 English</button>
-                <button class="lang-btn" onclick="switchLang('ja')">🇯🇵 日本語</button>
+                <button class="lang-btn active" onclick="switchLang('zh-TW')">繁體中文</button>
+                <button class="lang-btn" onclick="switchLang('en')">English</button>
+                <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
             </div>
 
             <ul class="nav-links">
@@ -1680,8 +1677,8 @@
                 s2_c1_li2: '<strong>内在的イメージと触覚知覚：</strong>触覚（冷たい、柔らかい）や運動感覚（力を抜くと流れ、入れると固まる）、および心理的感情のイメージ。',
                 s2_c1_quote: '園児の言葉：「片栗粉を触ると、温かくてリラックスして、冷たくて柔らかい感じがする。」',
                 s2_c2_title: '2. 理論的素材 (Theories) の実践',
-                s2_c2_li1: '<strong>美学・心理学理論：</strong>Berlyne、Schneider & Shiffrin、Marschalekの審美判断認知モデルの導入。',
-                s2_c2_li2: '<strong>自然科学と生活の結合：</strong>流体力学の法則探索と、日常の連想（砂浜、生地、ジュース、スライム）。',
+                s2_c2_li1: '<strong>美學・心理學理論：</strong>Berlyne、Schneider & Shiffrin、Marschalekの審美判断認知モデルの導入。',
+                s2_c2_li2: '<strong>自然科學與生活連結：</strong>流体力学の法則探索と、日常の連想（砂浜、生地、ジュース、スライム）。',
                 s2_c2_quote: '園児の役割投影：「操作しているとき、自分が芸術家や科学者やダンス家になった気分！」',
 
                 s3_title: '3. 『色彩の流れ』が依拠する3大認知注意理論',
@@ -1712,7 +1709,7 @@
                 s4_p4_t: '表現と実践プロセス',
                 s4_p4_d: '力加減と混色：「優しく触ると流れ、強く押すと固まる」、滴下創作と色への命名。',
                 s4_p5_t: '成果とプロセスの振り返り',
-                s4_p5_d: '対話と役割投影：「何に見える？自分は誰になった気分？」（料理人、芸術家、科学者）。',
+                s4_p5_d: '対話と役割投影：「何に見える？自分は誰になった気分？」（料理人、芸術家、科學家）。',
 
                 s5_title: '5. 審美判断の4つのプロセス：Eisnerの教育批評觀',
                 s5_desc: 'Eisnerの「芸術鑑賞」と「芸術批評」は、教師の問いかけを通じて自動的注意から制御的注意へと高められ、4つのプロセスを展開します：',
@@ -1722,13 +1719,13 @@
                 s5_dual_1_d: '主に<strong>教師が児童の学習過程や結果に対して質的研究を行う</strong>際の、心理発達の観察・記録手法として適用される。',
                 s5_dual_2_t: '2. 児童側：作品やメディア現象への批評指導',
                 s5_dual_2_d: '教師がこのステップを用いて<strong>児童に作品や芸術現象（非ニュートン流体の特性等）を批評・反省させる</strong>指導を行う。',
-                s5_eisner_1_h: '芸術鑑賞 (Connoisseurship & Appreciation) <span class="badge">園児の品質感知と教師の質的観察</span>',
+                s5_eisner_1_h: '芸術鑑賞 (Connoisseurship & Appreciation) <span class="badge">園児の品質感知と教師の質的觀察</span>',
                 s5_eisner_1_p: '園児が片栗粉の流動性を手のひらで鋭く感じ取ると同時に、教師も鑑識の視点から発達を観察記録します。',
-                s5_eisner_2_h: '芸術批評 (Art Criticism) <span class="badge">メディア現象批評と言語再構築</span>',
+                s5_eisner_2_h: '芸術批評 (Art Criticism) <span class="badge">メディア現象批評言語言語再構築</span>',
                 s5_eisner_2_p: '流体の変化や自身の創作について対話し、《五感における触覚》の体験を公的な言語と色の物語へと転換します。',
                 s5_sub_h3: '『色彩の流れ』Eisnerの4段階と制御的注意の問いかけ実践：',
                 s5_st1_t: '1. 記述 (Description)',
-                s5_st1_g: '【目標】客観的観察と感覚的質観の気づき',
+                s5_st1_g: '【目標】客観的觀察と感覚的質観の気づき',
                 s5_st1_c: '<strong style="color: var(--text-primary);">💬 教師の問いかけ：</strong><br>「片栗粉水を両手ですくった時、何が見えた？手を緩めるとどうなった？」<br><br><strong style="color: var(--text-primary);">👦 園児の応答：</strong><br>「強く握ると石みたいに固いけど、力を抜くと指の隙間から水みたいに流れる！」',
                 s5_st2_t: '2. 分析 (Analysis)',
                 s5_st2_g: '【目標】関係探求と材質構造の法則性',
@@ -1745,7 +1742,7 @@
                 s6_th1: '第2章理論的次元',
                 s6_th2: '核心的理論の解釈',
                 s6_th3: '『色彩の流れ』授業実践との比較',
-                s6_r1_c1: '<strong>1. 内在的価値 vs. 外在的価値</strong>',
+                s6_r1_c1: '<strong>1. 内在的價值 vs. 外在的價值</strong>',
                 s6_r1_c2: '<strong>内在的：</strong>美の体験が核心で、感覚の気づきと満足を強調。<br><strong>外在的：</strong>情緒の発散、創造性、運動能力の促進。',
                 s6_r1_c3: '<strong style="color: var(--accent-sage);">[内在]</strong> 独自の触覚を感じ「虹のジュース」と命名。<br><strong style="color: var(--accent-blue);">[外在]</strong> 捏ねる動作で感情を発散し筋肉を精練。',
                 s6_r2_c1: '<strong>2. 人間本質価値：真・善・美・聖</strong>',
