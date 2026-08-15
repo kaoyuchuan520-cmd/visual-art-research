@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>幼兒藝術教育價值論與《色彩之流》教學實踐對接探析</title>
+    <title>幼兒藝術教育價值論與《色彩之流》教學對接探析</title>
     <meta name="description" content="劉豐榮教授與何文玲副教授合著之《幼兒藝術》中第二章 幼兒藝術教育之價值論、目的與取向與高玉娟老師《色彩之流》大班幼兒觸覺教學實踐之理論對接與現場照片紀錄。">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,10 +64,10 @@
             z-index: 100;
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            background: rgba(246, 244, 239, 0.94);
+            background: rgba(246, 244, 239, 0.96);
             border-bottom: 1px solid var(--border-color);
             padding: 14px 24px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
 
         .header-container {
@@ -115,34 +115,38 @@
         .lang-switcher {
             display: flex;
             align-items: center;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 3px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            background: #FFFFFF;
+            border: 2px solid var(--accent-sage);
+            border-radius: 24px;
+            padding: 4px;
+            box-shadow: 0 4px 12px rgba(110, 133, 117, 0.15);
             flex-shrink: 0;
         }
 
         .lang-btn {
             background: transparent;
             border: none;
-            padding: 5px 12px;
-            font-size: 0.82rem;
-            font-weight: 600;
+            padding: 6px 14px;
+            font-size: 0.86rem;
+            font-weight: 700;
             color: var(--text-secondary);
-            border-radius: 16px;
+            border-radius: 18px;
             cursor: pointer;
             transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .lang-btn:hover {
             color: var(--accent-sage);
+            background: rgba(110, 133, 117, 0.08);
         }
 
         .lang-btn.active {
             background: var(--accent-sage);
             color: #FFFFFF;
-            box-shadow: 0 2px 6px rgba(110, 133, 117, 0.3);
+            box-shadow: 0 3px 8px rgba(110, 133, 117, 0.35);
         }
 
         main {
@@ -616,8 +620,16 @@
             }
 
             .lang-switcher {
-                align-self: flex-end;
-                margin-top: -36px;
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 4px;
+            }
+
+            .lang-btn {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+                flex: 1;
+                justify-content: center;
             }
 
             .nav-links {
@@ -714,9 +726,9 @@
 
             <!-- 🌐 多國語言切換按鈕 -->
             <div class="lang-switcher">
-                <button class="lang-btn active" onclick="switchLang('zh-TW')">繁體中文</button>
-                <button class="lang-btn" onclick="switchLang('en')">English</button>
-                <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
+                <button class="lang-btn active" onclick="switchLang('zh-TW')">🇹🇼 繁體中文</button>
+                <button class="lang-btn" onclick="switchLang('en')">🇺🇸 English</button>
+                <button class="lang-btn" onclick="switchLang('ja')">🇯🇵 日本語</button>
             </div>
 
             <ul class="nav-links">
@@ -1643,7 +1655,7 @@
 
                 p5_tag: '写真 5：創造的注意の柔軟性',
                 p5_title: '流動観察と役割投影の集中',
-                p5_desc: '流体の観察と想像的な連想の間を柔軟に切り替え（Marschalek 1983）、創造的注意の柔軟性を示します。',
+                p5_desc: '流体の観察と自由な想像の間を迅速に行き来し（Marschalek 1983）、創造的注意の柔軟性を示します。',
 
                 p6_tag: '写真 6：生活経験と役割体験',
                 p6_title: '「ぼくは科学者、料理人、芸術家」',
@@ -1655,7 +1667,7 @@
                 s1_c1_li1: '<strong>「価値論 → 目的論 → 方法論」の階層的発展：</strong>教育方法（いかに教えるか）は教育目的（何を教えるか）に基づき、目的は価値観（なぜ教えるか）に由来する。',
                 s1_c1_li2: '<strong>精神指向の全人美術教育：</strong>芸術の「内在的価値（本質論：美の体験）」と「外在的価値（文脈論：芸術療法・社会機能）」を統合し、真善美聖の人間本質価値を実現する。',
                 s1_c1_li3: '<strong>美の領域能力の育成：</strong>探索・表現・応答・鑑賞を通じ、身体・心・精神の全体的発達と主体の自己認識および適正な発達を重視する。',
-                s1_c2_title: '🌱 2. 高玉娟先生『色彩の流れ』の実践的位置づけ',
+                s1_c2_title: '🌱 2. 高玉娟先生『色彩の流れ』の実踐的位置づけ',
                 s1_c2_li1: '<strong>「触覚と色彩知覚」を主軸に：</strong>価値論が強調する感官自覚と美の体験に応じ、非ニュートン流体を媒介として使用。',
                 s1_c2_li2: '<strong>プロセスと品質思考指向：</strong>単なる完成品重視を脱却し、「変化の探索、制御の練習、創造の試み」という内面的関与に集中。',
                 s1_c2_li3: '<strong>認知・注意理論による支え：</strong>Berlyne（視覚刺激）、Schneider & Shiffrin（フロー）、Marschalek（効率的注意）を通じて具体化。',
@@ -1681,15 +1693,15 @@
                 s3_m2_title: '2. 制御的注意モード (Controlled Attention)',
                 s3_m2_desc: '<strong>定義：</strong>内在的な記憶や認知戦略によって誘発される。<strong>【学習の成果を示す】</strong><br><strong>授業の現れ：</strong>過去の生活経験（生地・ジュース）を思い出し、調色や固定の工夫を能動的に考える。',
                 s3_m3_title: '3. 学習転換の鍵 (Learning Transition)',
-                s3_m3_desc: '<strong>核心的哲学：</strong>「学習を通じてのみ、受動的な自動的注意から高次元の制御的注意へと到達できる。」<br><strong>教育的価値：</strong>開放的な問いかけにより、園児の注意力の飛躍的成長をスムーズに促す。',
+                s3_m3_desc: '<strong>核心的哲学：</strong>「学習を通じてのみ、受動的な自動的注意から高次元の制御的注意へと到達できる。」<br><strong>教育的価値：</strong>問いかけにより、園児の注意力の飛躍的成長をスムーズに促す。',
                 s3_acc_1_h: '一、Berlyne (1971)：動機付けと審美探索（適度な不確実性）',
-                s3_acc_1_c: '<strong>核心的観点：</strong>斬新で複雑な刺激に対して探索動機が生じる。<br><strong>授業実践：</strong>非ニュートン流体の粘度変化と混色が興味を持続させ、「虹のジュース」などの命名につながる。',
-                s3_acc_2_h: '二、Schneider & Shiffrin (1977)：自動的注意から制御的注意へ、そしてフロー体験へ',
-                s3_acc_2_c: '<strong>核心的観点：</strong>注意が自動から制御へと進み、フロー状態が生まれる。<br><strong>授業実践：</strong>技術の習得に伴い自律的な注意運用へと至り、没頭した「フロー」状態で創作を行う。',
+                s3_acc_1_c: '<strong>核心的觀點：</strong>斬新で複雑な刺激に対して探索動機が生じる。<br><strong>授業実践：</strong>非ニュートン流体の粘度変化と混色が興味を持続させ、「虹のジュース」などの命名につながる。',
+                s3_acc_2_h: '二、Schneider & Shiffrin (1977)：自動的注意から制御的注意へ、商してフロー体験へ',
+                s3_acc_2_c: '<strong>核心的觀點：</strong>注意が自動から制御へと進み、フロー状態が生まれる。<br><strong>授業実践：</strong>技術の習得に伴い自律的な注意運用へと至り、没頭した「フロー」状態で創作を行う。',
                 s3_acc_3_h: '三、Marschalek (1983)：注意の柔軟性と反応戦略学習',
-                s3_acc_3_c: '<strong>核心的観点：</strong>反応戦略の学習が効率的で柔軟な注意力をもたらす。<br><strong>授業実践：</strong>流体の観察と自由な想像の間を迅速に行き来し、多次元の注意の柔軟性を示す。',
+                s3_acc_3_c: '<strong>核心的觀點：</strong>反応戦略の学習が効率的で柔軟な注意力をもたらす。<br><strong>授業実践：</strong>流体の観察と自由な想像の間を迅速に行き来し、多次元の注意の柔軟性を示す。',
 
-                s4_title: '4. 授業アクションリサーチ：『色彩の流れ』の実践',
+                s4_title: '4. 授業アクションリサーチ：『色彩の流れ』の実踐',
                 s4_desc: '劉教授は美術教育実践を「研究者＝行動者」の探究モデルとして位置づけます。高玉娟先生は以下の5段階で循環実践を行いました：',
                 s4_p1_t: '自己観察と検証',
                 s4_p1_d: '手触りの体感：「片栗粉を触るとどんな感じ？」（柔らかい、すべすべ、ねばねば）。',
@@ -1702,7 +1714,7 @@
                 s4_p5_t: '成果とプロセスの振り返り',
                 s4_p5_d: '対話と役割投影：「何に見える？自分は誰になった気分？」（料理人、芸術家、科学者）。',
 
-                s5_title: '5. 審美判断の4つのプロセス：Eisnerの教育批評観',
+                s5_title: '5. 審美判断の4つのプロセス：Eisnerの教育批評觀',
                 s5_desc: 'Eisnerの「芸術鑑賞」と「芸術批評」は、教師の問いかけを通じて自動的注意から制御的注意へと高められ、4つのプロセスを展開します：',
                 s5_card_dual_h3: '💡 劉豐榮教授の特別指導：美術鑑識と批評の二重応用レベル',
                 s5_card_dual_p: '劉教授は、「美術鑑識と批評」には教育と研究において2つの重要な応用側面があると強調します：',
@@ -1719,7 +1731,7 @@
                 s5_st1_g: '【目標】客観的観察と感覚的質観の気づき',
                 s5_st1_c: '<strong style="color: var(--text-primary);">💬 教師の問いかけ：</strong><br>「片栗粉水を両手ですくった時、何が見えた？手を緩めるとどうなった？」<br><br><strong style="color: var(--text-primary);">👦 園児の応答：</strong><br>「強く握ると石みたいに固いけど、力を抜くと指の隙間から水みたいに流れる！」',
                 s5_st2_t: '2. 分析 (Analysis)',
-                s5_st2_g: '[目標] 関係探求と材質構造の法則性',
+                s5_st2_g: '【目標】関係探求と材質構造の法則性',
                 s5_st2_c: '<strong style="color: var(--text-primary);">💬 教師の問いかけ：</strong><br>「なぜ固くなったり流れたりするの？のりを混ぜた時と色が広がる法則は？」<br><br><strong style="color: var(--text-primary);">👦 園児の応答：</strong><br>「ギューッと押すと粒の手と手が繋がって固くなる！のりは乾いて紙に残すためで、マーブルみたいに広がるよ！」',
                 s5_st3_t: '3. 解釈 (Interpretation)',
                 s5_st3_g: '【目標】イメージの連想・経験の引き出しと意味の構築',
