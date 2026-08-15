@@ -133,6 +133,7 @@
             border-radius: 16px;
             cursor: pointer;
             transition: all 0.25s ease;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .lang-btn:hover {
@@ -711,6 +712,603 @@
             }
         }
     </style>
+
+    <!-- JavaScript 多國語言 i18n 核心庫 (放置於 <head> 確保優先載入與極致相容) -->
+    <script>
+        const i18nData = {
+            'zh-TW': {
+                site_title: '幼兒藝術教育價值論與《色彩之流》教學對接探析',
+                nav_1: '1. 理論背景與實踐定位',
+                nav_2: '2. 意象與理論素材',
+                nav_3: '3. 三大注意力理論',
+                nav_gallery: '📷 課堂照片紀錄',
+                nav_4: '4. 《色彩之流》行動研究',
+                nav_5: '5. 審美判斷之四個歷程',
+                nav_6: '6. 價值論與教育取向分析',
+                nav_7: '7. 結論與教學建議',
+
+                hero_tag_theory: '理論基礎：劉豐榮 教授、何文玲 副教授',
+                hero_tag_practice: '教學實踐：高玉娟 老師（嘉義市大同國小）',
+                hero_h1: '幼兒藝術教育之價值論、目的與取向：<br><span style="color: var(--accent-sage);">大班幼兒《色彩之流》實踐教案之理論對接</span>',
+                hero_desc: '本網頁依據劉豐榮教授與何文玲副教授合著之《幼兒藝術》中第二章 幼兒藝術教育之價值論、目的與取向，與高玉娟老師於嘉義市大同國小實施之《色彩之流》大班幼兒觸覺教案進行深度理論對接與實務定位整理。',
+                hero_meta_1: '📚 理論架構：<strong>前述作者之《幼兒藝術》中第二章 幼兒藝術教育之價值論、目的與取向</strong>',
+                hero_meta_2: '🏫 實務教案：<strong>高玉娟 老師《徜徉色彩時光－觸覺篇：色彩之流》</strong> (2025)',
+                keywords_label: '🔑 核心關鍵字 (6 個)：',
+                kw_1: '質化研究',
+                kw_2: '視覺藝術創作',
+                kw_3: '藝術鑑賞與批評',
+                kw_4: '非牛頓流體',
+                kw_5: '心流體驗',
+                kw_6: '創造性注意力彈性',
+
+                card_1_h3: '理論與實務有機結合',
+                card_1_p: '前述「藝術教育價值論」之藝術功能可在《色彩之流》教案中獲得落實，非牛頓流體操作展現幼兒的高層認知與造形思考。',
+                card_2_h3: '非牛頓流體感官探索',
+                card_2_p: '結合太白粉、水與白膠，幼兒在「冰冰的、軟軟的、會流動又會變硬」的觸覺中經歷控制與創造。',
+                card_3_h3: '三大注意力理論支撐',
+                card_3_p: '融合 Berlyne（適度不確定性）、Schneider & Shiffrin（自動化的注意到控制自如的注意，進而展現自由的心流）與 Marschalek（反應策略的學習可達有效率的注意力）。',
+                card_4_h3: '角色投射與認同',
+                card_4_p: '幼兒命名自調顏色（如「彩虹果汁」），投射自我身份為「藝術家、科學家、廚師與跳舞家」。',
+
+                gallery_title: '《色彩之流》大班幼兒真實教學現場照片紀錄',
+                gallery_desc: '以下照片摘錄自高玉娟老師於嘉義市大同國小實施之《色彩之流》教案現場紀錄，對接與佐證《幼兒藝術》之理論與三大注意力心理學：',
+
+                p1_tag: '照片 1：觸覺與適度不確定性',
+                p1_title: '抓取非牛頓流體感官探索',
+                p1_desc: '幼兒雙手抓起太白粉水，體驗「冰冰的、軟軟的、會流動又會變硬」的觸覺刺激（Berlyne 1971 適度不確定性）。',
+
+                p2_tag: '照片 2：混色與審美探索',
+                p2_title: '「彩虹果汁」調色與色彩命名',
+                p2_desc: '幼兒在容器中混合顏料與太白粉，觀察顏色變化並為調配色彩命名「彩虹果汁」，展現審美探索心理參與。',
+
+                p3_tag: '照片 3：控制性注意發展',
+                p3_title: '工具操作與水量滴流控制',
+                p3_desc: '幼兒集中注意力觀察材料混合與滴流技巧（Schneider & Shiffrin 1977 控制性注意），學習調整水量與力道。',
+
+                p4_tag: '照片 4：自動化創作與心流',
+                p4_title: '大理石紋色彩流動作品',
+                p4_desc: '幼兒邁向熟練的「自動化」混色創作，進入類似「心流 (Flow)」狀態，於紙面上留下斑欄流暢的造型。',
+
+                p5_tag: '照片 5：注意力彈性與聚焦',
+                p5_title: '專注滴流創作與角色投射',
+                p5_desc: '幼兒在觀察材料流動與聯想想像之間靈活轉換（Marschalek 1983），展現創造性注意力彈性。',
+
+                p6_tag: '照片 6：生活經驗與角色體驗',
+                p6_title: '「我是科學家、廚師與藝術家」',
+                p6_desc: '幼兒坐在地上體驗流體固體變化，將經驗連結至麵糊與果汁，並建立創作者角色自我認同。',
+
+                s1_title: '理論背景與教學實踐之定位（依核心文獻精確對接）',
+                s1_desc: '本教學實踐係依據劉豐榮教授與何文玲副教授合著《幼兒藝術》中第二章 幼兒藝術教育之價值論、目的與取向衍生構思，並由高玉娟老師於嘉義市大同國小大班幼兒課堂落實。其理論立論與教學實踐定位整理如下：',
+                s1_c1_title: '🏛️ 1. 劉豐榮教授與何文玲副教授之核心理論立論',
+                s1_c1_li1: '<strong>「價值論 → 目的論 → 方法論」層級遞進：</strong>教育方法（如何教）必須立基於教育目的（教什麼），而目的則導源於價值觀（為何而教）。',
+                s1_c1_li2: '<strong>精神性取向全人藝術教育：</strong>主張統合藝術的「內在價值（本質論：含美感體驗…）」與「外在價值（脈絡論：含藝術治療、藝術社會功能…）」，以實現真善美聖之人類本質價值。',
+                s1_c1_li3: '<strong>美感領域能力培養：</strong>強調幼兒在探索覺察、表現創作、回應與賞析中獲得整體性身心靈之發展與主體之自我認識與適當發展。',
+                s1_c2_title: '🌱 2. 高玉娟老師《色彩之流》之實踐定位',
+                s1_c2_li1: '<strong>以「觸覺與色彩感知」為課程主軸：</strong>響應價值論中對幼兒「感官覺察與美感體驗」的重視，以非牛頓流體（太白粉、水、白膠）為媒介。',
+                s1_c2_li2: '<strong>歷程與品質思考導向：</strong>將教學定位於「探索變化、練習控制、嘗試創造」，打破過往「只重精美產物」的迷思，專注於幼兒內在心理參與。',
+                s1_c2_li3: '<strong>認知與注意力理論支撐：</strong>將抽象的美感價值之體驗與學習轉化為基於理論的具體課堂活動，達有效的學習。這些理論包括： Berlyne（適度的視覺刺激）、Schneider & Shiffrin（自動化的注意到控制自如的注意，進而展現自由的心流）與 Marschalek（反應策略的學習可達有效率的注意力）等。',
+                s1_summary: '💡 <strong>綜結：</strong>《色彩之流》之教學嘗試將劉豐榮教授倡導的「精神性取向全人藝術教育」觀點，落實與轉化為幼兒園大班課堂中可操作、可觀察、可驗證的適齡感官探索歷程。',
+
+                s2_title: '幼兒藝術學習的核心素材：意象與理論之對接',
+                s2_desc: '劉豐榮教授提出藝術探討的素材來自「非語言屬性之意象」與「語言屬性之理論」。在《色彩之流》教學中，此兩大素材交織如下：',
+                s2_c1_title: '1. 意象素材 (Images) 實踐',
+                s2_c1_li1: '<strong>外在意象：</strong>太白粉流體之線條、水性變化、顏料滴流效果、白膠混合黏稠度。',
+                s2_c1_li2: '<strong>內在意象與感官知覺：</strong>觸覺（冰冰的、軟軟的、毛毛的）、肌肉運動感（手部力道輕會流掉、用力會變硬）。以及表現的內容，如心理的想法與情意呈現的意象。',
+                s2_c1_quote: '幼兒真實話語：「太白粉摸起來溫暖的、輕鬆的、冰冰的、軟軟的感覺。」',
+                s2_c2_title: '2. 理論素材 (Theories) 實踐',
+                s2_c2_li1: '<strong>美學與心理學理論：</strong>融入 Berlyne 、Schneider 與Shiffrin 以及Marschalek 之審美判斷認知理論。',
+                s2_c2_li2: '<strong>自然科學與生活連結：</strong>非牛頓流體材質探究規律、生活聯想（沙灘、麵糊、果汁、史萊姆）。',
+                s2_c2_quote: '幼兒角色投射：「我覺得自己在操作的時候是一位藝術家、跳舞家、科學家！」',
+
+                s3_title: '《色彩之流》所依據的三大認知注意力理論',
+                s3_desc: '《色彩之流》教案嘗試將注意力培養與創造力發展結合，對接與融合了三大認知心理學理論：',
+                s3_card_main_h3: '💡 劉豐榮教授特別註明：《注意模式的意義》與教學轉化',
+                s3_card_main_p: '劉豐榮教授特別指出，藝術教學關鍵在於帶領學習者經歷注意力模式的提升與深化，唯有達到「控制的注意」，才能真正體現藝術學習之實質成效：',
+                s3_m1_title: '1. 自動的注意模式 (Automatic Attention)',
+                s3_m1_desc: '<strong>核心定義：</strong>僅由外在「物理的刺激」所促發。<br><strong>課堂呈現：</strong>幼兒被太白粉水冰冰軟軟的觸覺與顏料流動等外在物理刺激吸引（被動感官探索）。',
+                s3_m2_title: '2. 控制的注意模式 (Controlled Attention)',
+                s3_m2_desc: '<strong>核心定義：</strong>由「內在來源（如以前的學習或認知策略）」所促發。<strong>【此顯示學習之成效】</strong><br><strong>課堂呈現：</strong>幼兒主動提取過去生活經驗（麵糊、果汁）、思考調色與白膠固定策略（主動認知策略）。',
+                s3_m3_title: '3. 學習轉化關鍵 (Learning Transition)',
+                s3_m3_desc: '<strong>核心哲學：</strong>「透過學習，才能由被動的自動注意模式，達到較高層次的控制注意模式。」<br><strong>教學價值：</strong>教師透過《色彩之流》開放性提問，引導孩子順暢完成注意力的實質躍升與成長。',
+                s3_acc_1_h: '一、Berlyne (1971)：認知動機與審美探索（適度不確定性與視覺刺激）',
+                s3_acc_1_c: '<strong>核心觀點：</strong>個體對「新奇、複雜、不確定」刺激產生探索動機與適度的視覺刺激。<br><strong>教學呈現：</strong>非牛頓流體黏稠變化與混色具高度新奇性。幼兒感受「冰冰的、軟軟的、會流動又會變硬」，自然激發穩定而持久的注意力與學習投入，並為自調顏色命名（如「彩虹果汁」）。',
+                s3_acc_2_h: '二、Schneider & Shiffrin (1977)：自動化的注意到控制自如的注意，進而展現自由的心流',
+                s3_acc_2_c: '<strong>核心觀點：</strong>注意力經歷從「自動化的注意」邁向「控制自如的注意」，進而展現自由的心流。<br><strong>教學呈現：</strong>幼兒初期需集中注意觀察水量與滴流技巧；隨著操作熟悉與引導，達到控制自如的注意力運作，進入專注愉悅的「心流 (Flow)」創作狀態。',
+                s3_acc_3_h: '三、Marschalek (1983)：注意力的彈性與反應策略學習（有效率的注意力）',
+                s3_acc_3_c: '<strong>核心觀點：</strong>反應策略的學習可達有效率的注意力與創造性彈性。<br><strong>教學呈現：</strong>幼兒不僅聚焦觀察材料流動，也能迅速轉換至聯想（「這像棒棒糖」、「我是小廚師」），展現感官-情緒-語言-概念間的多層次注意力彈性。',
+
+                s4_title: '教學行動探究：《色彩之流》課堂實務',
+                s4_desc: '劉豐榮教授指出，藝術教學行動屬於「研究者即行動者」的個案與行動探究。高玉娟老師在嘉義市大同國小將行動研究貫徹為以下五個實務循環階段：',
+                s4_p1_t: '自我觀察與檢視',
+                s4_p1_d: '引導幼兒體驗手感：「太白粉摸起來感覺怎樣？」（軟軟的、滑滑的、黏黏的）。',
+                s4_p2_t: '尋找問題與方向',
+                s4_p2_d: '觀察材質探究規律：「太白粉加水之後有什麼變化？」（太白粉會沉澱、粉多會變硬）。',
+                s4_p3_t: '創作計畫與方案',
+                s4_p3_d: '實驗加入不同物質：「為什麼加白膠？」（為了讓顏料乾了之後能保留在紙上）。',
+                s4_p4_t: '表現與實踐歷程',
+                s4_p4_d: '力道控制與混色：「力道輕輕的會流掉，用力的會變硬」，進行滴流創作與色彩命名。',
+                s4_p5_t: '成果與歷程檢討',
+                s4_p5_d: '分享討論與角色投射：「顏色像什麼？你覺得你像誰？」（廚師、藝術家、科學家）。',
+
+                s5_title: '審美判斷之四個歷程：Eisner 教育批評觀點應用於課堂之兒童心理轉化',
+                s5_desc: 'Eisner 的「藝術鑑賞（感受品質細節）」與「藝術批評（用語言重構美感）」在《色彩之流》教學中，透過教師精心設計的開放性提問，引導孩子從被動的「自動注意（感官刺激）」提升為主的「控制注意（策略提取與經驗連結）」，並順暢展開經典的審美判斷四大歷程：',
+                s5_card_dual_h3: '💡 劉豐榮教授特別指導：藝術鑑識與批評之雙重應用層次',
+                s5_card_dual_p: '劉豐榮教授特別提醒，「藝術鑑識與藝術批評」在教學與研究中具備兩大核心應用面向：',
+                s5_dual_1_t: '1. 教師端：學習歷程之質性（質化）研究',
+                s5_dual_1_d: '主要應用在<strong>教師對學生學習過程或結果進行質性（質化）研究</strong>，作為評量、觀察與紀錄幼兒心理發展之學術與觀察方法。',
+                s5_dual_2_t: '2. 學生端：作品與媒材現象之批評指引',
+                s5_dual_2_d: '教師運用此步驟<strong>指導學生對作品或藝術現象（如非牛頓流體等藝術媒材特性）進行批評與反思</strong>，促成知覺再教育與意義建構。',
+                s5_eisner_1_h: '藝術鑑賞 (Connoisseurship & Appreciation) <span class="badge">幼兒品質感知與教師質化觀察</span>',
+                s5_eisner_1_p: '幼兒透過手指與掌心撫觸太白粉流體，敏銳感知「受力變硬、無力流動」的微細品質交互作用；同時教師亦以鑑識視角觀察記錄幼兒感知發展。',
+                s5_eisner_2_h: '藝術批評 (Art Criticism) <span class="badge">媒材現象批評與語言重構</span>',
+                s5_eisner_2_p: '教師透過問題引導幼兒對藝術媒材現象（如流體變化）與個人創作進行對話與批評，將《五感中的觸覺》體驗轉化為公眾語言與色彩故事。',
+                s5_sub_h3: '《色彩之流》對應 Eisner 審美判斷之四個歷程與控制注意提問實務：',
+                s5_st1_t: '1. 描述 (Description)',
+                s5_st1_g: '【目標】客觀觀察與感官質地覺察',
+                s5_st1_c: '<strong style="color: var(--text-primary);">💬 控制注意引導提問：</strong><br>「當你用雙手抓起太白粉水時，你觀察到什麼？放開手之後又發生了什麼現象？」<br><br><strong style="color: var(--text-primary);">👦 兒童回應轉化：</strong><br>「用力抓緊時感覺硬硬的像石頭，手一鬆開它就從手指縫流下來，變回水水的了！」',
+                s5_st2_t: '2. 分析 (Analysis)',
+                s5_st2_g: '【目標】關係探究與材質結構規律',
+                s5_st2_c: '<strong style="color: var(--text-primary);">💬 控制注意引導提問：</strong><br>「為什麼太白粉水會變硬又會流動？你如何發現加白膠跟調色時顏料擴散的規律？」<br><br><strong style="color: var(--text-primary);">👦 兒童回應轉化：</strong><br>「因為用力擠壓時顆粒手牽手變緊了！加白膠是為了讓顏色乾了之後留在紙上，顏料滴下去像大理石紋路慢慢擴散。」',
+                s5_st3_t: '3. 闡釋 (Interpretation)',
+                s5_st3_g: '【目標】意象聯想、經驗提取與意義建構',
+                s5_st3_c: '<strong style="color: var(--text-primary);">💬 控制注意引導提問：</strong><br>「這些流動的色彩與觸感，讓你聯想到生活中的什麼經驗？探索時你覺得自己像誰在做什麼？」<br><br><strong style="color: var(--text-primary);">👦 兒童回應轉化：</strong><br>「讓我想起媽媽做麵糊、還有夏天喝的彩虹果汁！我覺得自己像一位探索自然現象的科學家與藝術家。」',
+                s5_st4_t: '4. 評價 (Evaluation)',
+                s5_st4_g: '【目標】價值判斷、情感回應與美感反思',
+                s5_st4_c: '<strong style="color: var(--text-primary);">💬 控制注意引導提問：</strong><br>「在這次滴流創作中，你最喜愛作品的哪個部分？嘗試說說看它帶給你什麼感覺與想法？」<br><br><strong style="color: var(--text-primary);">👦 兒童回應轉化：</strong><br>「我最喜愛藍色與黃色混出來的嫩綠流紋！看著顏料自由流動時，我覺得心裡很平靜、很有成就感。」',
+
+                s6_title: '幼兒《色彩之流》藝術學習與「幼兒藝術教育價值論、目的與取向」分析對比',
+                s6_desc: '依據劉豐榮教授與何文玲副教授著作《幼兒藝術》中《第二章 幼兒藝術教育之價值論、目的與取向》之理論架構（含內在/外在價值、人類本質價值真善美聖、三大教育取向及教保大綱美感領域），深入分析對比高玉娟老師《色彩之流》大班幼兒藝術學習實務：',
+                s6_th1: '第二章理論向度 (Theory)',
+                s6_th2: '核心理論詮釋 (Concept)',
+                s6_th3: '《色彩之流》大班幼兒藝術學習實踐對比 (Practice)',
+                s6_r1_c1: '<strong>1. 內在價值 vs. 外在價值</strong><br>(Intrinsic vs. Extrinsic Values)',
+                s6_r1_c2: '<strong>內在價值（本質論）：</strong>美感經驗為藝術核心，強調感官覺察、造形意象與內在滿足。<br><strong>外在價值（脈絡論）：</strong>作為發展催化劑，促進創造力、情緒洗瀉淨化 (cathartic) 與手部協調。',
+                s6_r1_c3: '<strong style="color: var(--accent-sage);">【內在價值】</strong>幼兒以五官感受非牛頓流體「冰冰軟軟」的獨特觸覺境界，並命名自調色彩「彩虹果汁」，獲得心理滿足。<br><strong style="color: var(--accent-blue);">【外在價值】</strong>透過手的抓捏紓解情緒，發揮「創造性注意力」，並精練手部肌肉與力道控制。',
+                s6_r2_c1: '<strong>2. 人類本質價值：真、善、美、聖</strong><br>(Essential Human Values)',
+                s6_r2_c2: '<strong>真：</strong>生命規律洞察與材質特性的探究認知。<br><strong>善：</strong>自我覺察、角色認同與文化關懷。<br><strong>美：</strong>和諧心理與美感受力。<br><strong>聖：</strong>身心靈全人發展與終極價值。',
+                s6_r2_c3: '<strong style="color: var(--accent-amber);">【真】</strong>在操作中主動求真探究，感知太白粉受力變硬、無力流動的自然物質現象與力學規律。<br><strong style="color: var(--accent-sage);">【善】</strong>投射角色（「我是藝術家、科學家、廚師」），建構創作者認同。<br><strong style="color: var(--accent-terracotta);">【美】</strong>體驗色彩流動混色的美感，感受看到顏色時的幸福喜好。<br><strong style="color: var(--accent-mauve);">【聖】</strong>在滴流創作中達成全人身心靈和諧的「心流」境界。',
+                s6_r3_c1: '<strong>3. 三大教育取向之統合</strong><br>(Student, Discipline & Issue Orientations)',
+                s6_r3_c2: '<strong>學生取向 (SCAE/CCAE)：</strong>兒童中心，順應自然的感官探索。<br><strong>學科取向 (DBAE/DCAE)：</strong>創作、批評、美學與歷史。<br><strong>議題/生活取向：</strong>視覺文化與生活經驗連結。',
+                s6_r3_c3: '<strong style="color: var(--accent-blue);">【學生取向】</strong>幼兒自由選擇顏料、探索非牛頓流體。<br><strong style="color: var(--accent-mauve);">【學科取向】</strong>透過教師提問進行審美判斷之四個歷程學習。<br><strong style="color: var(--accent-sage);">【議題/生活取向】</strong>將流體聯想至日常經驗「麵糊、果汁、彩虹、史萊姆」。',
+                s6_r4_c1: '<strong>4. 當代精神性全人藝術教育</strong><br>(Spirituality-Oriented Holistic Education)',
+                s6_r4_c2: '強調「整體性之顯現 (emergence of wholeness)」，整合身心靈，促成主體性與美感境界的提昇（高度）、深化（深度）與融通（廣度）。',
+                s6_r4_c3: '<strong style="color: var(--accent-sage);">跨領域統整藝術與科學：</strong>將自然科學材質探究規律（非牛頓流體）融入藝術操作，實現感官、認知、情緒與生命體驗的跨領域全人發展。',
+                s6_r5_c1: '<strong>5. 幼兒教保大綱美感領域對接</strong><br>(Preschool Curriculum Alignment)',
+                s6_r5_c2: '包含三大領域能力（探索覺察、表現創作、回應與賞析）及兩大學習面向（情意、藝術媒介）。',
+                s6_r5_c3: '<strong style="color: var(--accent-blue);">【美-1-2】</strong>用五官感受非牛頓流體（覺知辨識）。<br><strong style="color: var(--accent-sage);">【美-2-1】</strong>發揮想像進行滴流混色創作（表現創作）。<br><strong style="color: var(--accent-amber);">【美-3-1】</strong>回應對自調色彩喜好與角色投射（回應與賞析）。',
+
+                s7_title: '結論與給幼兒園教師的教學建議',
+                s7_h3: '💡 結合劉豐榮教授與何文玲副教授理論與《色彩之流》經驗之給教師五大建議：',
+                s7_li1: '<strong>專注於感官體驗，而非藝術成果：</strong>重點放在引導幼兒感受材料變化（冰冰的、軟軟的、會流動又會變硬），鼓勵自由操作。',
+                s7_li2: '<strong>創造「適度不確定性」的環境：</strong>利用非牛頓流體的新奇性（Berlyne 理論），提供開放環境讓幼兒在充滿好奇的狀態下探索。',
+                s7_li3: '<strong>運用角色扮演，了解不同角色與認識自我：</strong>透過提問引導幼兒扮演藝術家、廚師、科學家，啟發對不同角色的了解與認識自我之特質。',
+                s7_li4: '<strong>引導從「自動的注意」到「控制的注意」：</strong>透過引導性提問（Schneider & Shiffrin 理論），幫助幼兒提取經驗並進入專注愉悅的「心流」狀態。',
+                s7_li5: '<strong>將藝術融入生活，建立經驗連結：</strong>將創作中的顏色觸感與「麵糊、果汁、彩虹、糖果」連結，幫助抽象藝術體驗具體化。'
+            },
+            'en': {
+                site_title: 'Early Childhood Art Value Theory & "Flow of Color" Analysis',
+                nav_1: '1. Theoretical Foundation',
+                nav_2: '2. Imagery & Material',
+                nav_3: '3. Three Attention Theories',
+                nav_gallery: '📷 Photo Gallery',
+                nav_4: '4. Action Research',
+                nav_5: '5. Four Stages of Criticism',
+                nav_6: '6. Value Theory Analysis',
+                nav_7: '7. Conclusion & Suggestions',
+
+                hero_tag_theory: 'Theoretical Basis: Prof. Feng-Jung Liu & Assoc. Prof. Wen-Ling Ho',
+                hero_tag_practice: 'Classroom Practice: Teacher Yu-Chuan Kao (Datong Elementary School)',
+                hero_h1: 'Value Theory, Purposes & Approaches in Early Childhood Art Education:<br><span style="color: var(--accent-sage);">Theoretical Alignment with "Flow of Color" Tactile Curriculum</span>',
+                hero_desc: 'This website synthesizes Chapter 2 of "Early Childhood Art" (Liu & Ho) with Teacher Yu-Chuan Kao's tactile lesson plan "Flow of Color" implemented at Datong Elementary School in Chiayi City.',
+                hero_meta_1: '📚 Framework: <strong>Chapter 2 "Value Theory, Purpose & Approaches", Early Childhood Art</strong>',
+                hero_meta_2: '🏫 Practice: <strong>Teacher Yu-Chuan Kao "Savoring Color - Tactile: Flow of Color"</strong> (2025)',
+                keywords_label: '🔑 Key Concepts (6):',
+                kw_1: 'Qualitative Research',
+                kw_2: 'Visual Arts Creation',
+                kw_3: 'Art Connoisseurship & Criticism',
+                kw_4: 'Non-Newtonian Fluid',
+                kw_5: 'Flow Experience',
+                kw_6: 'Creative Attention Flexibility',
+
+                card_1_h3: 'Organic Theory-Practice Integration',
+                card_1_p: 'The art functions in Value Theory are realized in "Flow of Color", exhibiting high-level cognitive and form thinking in young children.',
+                card_2_h3: 'Non-Newtonian Sensory Exploration',
+                card_2_p: 'Combining starch, water, and glue, children experience control and creation in tactile sensations of "cool, soft, flowing yet hardening".',
+                card_3_h3: 'Backed by Three Attention Theories',
+                card_3_p: 'Fusing Berlyne (Moderate Uncertainty), Schneider & Shiffrin (Automatic to Controlled Attention Flow), and Marschalek (Efficient Attention).',
+                card_4_h3: 'Role Projection & Identity',
+                card_4_p: 'Children name custom colors (e.g., "Rainbow Juice") and project identities as "artists, scientists, chefs, and dancers".',
+
+                gallery_title: 'Real Classroom Photo Records of "Flow of Color"',
+                gallery_desc: 'The following photos document Teacher Yu-Chuan Kao's classroom implementation at Datong Elementary School, evidencing the attention theories:',
+
+                p1_tag: 'Photo 1: Touch & Moderate Uncertainty',
+                p1_title: 'Sensory Touch Exploration of Fluid',
+                p1_desc: 'Children scoop starch fluid, feeling "cool, soft, flowing yet hardening" tactile stimuli (Berlyne 1971 Moderate Uncertainty).',
+
+                p2_tag: 'Photo 2: Color Mixing & Aesthetic Exploration',
+                p2_title: '"Rainbow Juice" Mixing & Naming',
+                p2_desc: 'Children mix pigments and starch in containers, observing color transformations and naming their creation "Rainbow Juice".',
+
+                p3_tag: 'Photo 3: Controlled Attention Development',
+                p3_title: 'Tool Operation & Flow Control',
+                p3_desc: 'Children focus on material blending and dripping techniques (Schneider & Shiffrin 1977 Controlled Attention), mastering water ratios.',
+
+                p4_tag: 'Photo 4: Automatic Creation & Flow',
+                p4_title: 'Marble-Pattern Flow Artwork',
+                p4_desc: 'Children advance to automated color mixing, entering a "Flow" state leaving graceful marbled patterns on paper.',
+
+                p5_tag: 'Photo 5: Creative Attention Flexibility',
+                p5_title: 'Focused Dripping & Role Projection',
+                p5_desc: 'Children flexibly shift between observing fluid behavior and imaginative associations (Marschalek 1983 Attention Flexibility).',
+
+                p6_tag: 'Photo 6: Life Experience & Role Connection',
+                p6_title: '"I am a Scientist, Chef, and Artist"',
+                p6_desc: 'Sitting on the floor exploring solid-fluid transitions, children connect experiences to batter and juice, establishing artistic identity.',
+
+                s1_title: '1. Theoretical Background & Practice Positioning',
+                s1_desc: 'This practice is grounded in Chapter 2 of "Early Childhood Art" by Prof. Feng-Jung Liu and Assoc. Prof. Wen-Ling Ho, realized in kindergarten by Teacher Yu-Chuan Kao:',
+                s1_c1_title: '🏛️ 1. Core Proposition by Prof. Liu & Assoc. Prof. Ho',
+                s1_c1_li1: '<strong>Hierarchy: "Value Theory → Teleology → Methodology":</strong> Pedagogy (how to teach) must rest on purpose (what to teach), derived from values (why to teach).',
+                s1_c1_li2: '<strong>Spirituality-Oriented Holistic Art Education:</strong> Integrates intrinsic value (aesthetic experience) and extrinsic value (art therapy/social functions) to achieve Truth, Goodness, Beauty, and Holiness.',
+                s1_c1_li3: '<strong>Aesthetic Capability Cultivation:</strong> Emphasizes holistic physical-mental-spiritual growth, self-understanding, and proper development through exploration, creation, response, and appreciation.',
+                s1_c2_title: '🌱 2. Practical Positioning by Teacher Yu-Chuan Kao',
+                s1_c2_li1: '<strong>Focus on Tactile & Color Perception:</strong> Responds to Value Theory's emphasis on sensory awareness using non-Newtonian fluids (cornstarch, water, glue).',
+                s1_c2_li2: '<strong>Process & Quality-Oriented Thinking:</strong> Positions learning around "exploring changes, practicing control, attempting creation" over static end-products.',
+                s1_c2_li3: '<strong>Supported by Cognitive Attention Theories:</strong> Translates abstract values into concrete activities via Berlyne (visual stimuli), Schneider & Shiffrin (flow), and Marschalek (efficient attention).',
+                s1_summary: '💡 <strong>Summary:</strong> "Flow of Color" translates Prof. Liu's "Spirituality-Oriented Holistic Art Education" into operable, observable sensory exploration for kindergarteners.',
+
+                s2_title: '2. Core Learning Materials: Imagery & Theory Alignment',
+                s2_desc: 'Prof. Liu posits that art inquiry stems from "Non-verbal Imagery" and "Verbal Theories". In "Flow of Color", these materials interweave:',
+                s2_c1_title: '1. Imagery Materials Practice',
+                s2_c1_li1: '<strong>External Imagery:</strong> Fluid lines, wateriness, color dripping effects, and glue viscosity.',
+                s2_c1_li2: '<strong>Internal Imagery & Tactile Perception:</strong> Touch sensations (cool, soft, fluffy) and kinesthetic feedback (soft pressure flows, hard pressure turns solid).',
+                s2_c1_quote: 'Child's Words: "The starch feels warm, relaxed, cool, and soft to touch."',
+                s2_c2_title: '2. Theoretical Materials Practice',
+                s2_c2_li1: '<strong>Aesthetic & Psychological Theories:</strong> Integrated aesthetic judgment cognitive models (Berlyne, Schneider & Shiffrin, Marschalek).',
+                s2_c2_li2: '<strong>Natural Science & Life Connections:</strong> Non-Newtonian fluid principles and associations (beaches, batter, juice, slime).',
+                s2_c2_quote: 'Child's Role: "I feel like an artist, a dancer, and a scientist when doing this!"',
+
+                s3_title: '3. Three Cognitive Attention Theories in "Flow of Color"',
+                s3_desc: 'The curriculum bridges attention training and creativity by fusing three cognitive theories:',
+                s3_card_main_h3: '💡 Prof. Liu's Note: Significance of Attention Modes & Pedagogy',
+                s3_card_main_p: 'Prof. Liu highlights that art education hinges on guiding learners from automatic to controlled attention to achieve genuine learning outcomes:',
+                s3_m1_title: '1. Automatic Attention Mode',
+                s3_m1_desc: '<strong>Core Definition:</strong> Triggered purely by external physical stimuli.<br><strong>Classroom Manifestation:</strong> Children are passively drawn to starch touch and fluid color movement.',
+                s3_m2_title: '2. Controlled Attention Mode',
+                s3_m2_desc: '<strong>Core Definition:</strong> Triggered by internal sources (past learning/cognitive strategies). <strong>[Demonstrates Learning Outcome]</strong><br><strong>Classroom Manifestation:</strong> Children actively retrieve life experiences (batter/juice) and devise color-fixing strategies.',
+                s3_m3_title: '3. Learning Transition Key',
+                s3_m3_desc: '<strong>Core Philosophy:</strong> "Only through learning can one elevate from passive automatic attention to higher-level controlled attention."<br><strong>Educational Value:</strong> Open-ended questioning guides children to accomplish this cognitive leap smoothly.',
+                s3_acc_1_h: 'I. Berlyne (1971): Motivation & Aesthetic Exploration (Moderate Uncertainty)',
+                s3_acc_1_c: '<strong>Core View:</strong> Individuals are motivated by novel, complex, and uncertain stimuli.<br><strong>Classroom Practice:</strong> Non-Newtonian viscosity shifts spark sustained curiosity and color naming ("Rainbow Juice").',
+                s3_acc_2_h: 'II. Schneider & Shiffrin (1977): Automatic to Controlled Attention & Flow',
+                s3_acc_2_c: '<strong>Core View:</strong> Attention transitions from automatic to controlled, fostering a state of flow.<br><strong>Classroom Practice:</strong> Initial concentration on dripping techniques evolves into effortless, joyful "Flow" creation.',
+                s3_acc_3_h: 'III. Marschalek (1983): Attention Flexibility & Response Strategy',
+                s3_acc_3_c: '<strong>Core View:</strong> Learning response strategies yields efficient and flexible attention.<br><strong>Classroom Practice:</strong> Children shift seamlessly between observing fluid mechanics and imaginative roleplay.',
+
+                s4_title: '4. Action Research: "Flow of Color" Classroom Practice',
+                s4_desc: 'Prof. Liu notes that art action research operates on a "teacher-as-researcher" model. Teacher Yu-Chuan Kao implemented five cyclical phases:',
+                s4_p1_t: 'Self-Observation & Reflection',
+                s4_p1_d: 'Guiding tactile feeling: "How does starch feel?" (Soft, slippery, sticky).',
+                s4_p2_t: 'Identifying Questions & Direction',
+                s4_p2_d: 'Exploring fluid rules: "What happens when water is added?" (Settles down, hardens with pressure).',
+                s4_p3_t: 'Creation Plan & Solution',
+                s4_p3_d: 'Testing additives: "Why add glue?" (To bind colors onto paper upon drying).',
+                s4_p4_t: 'Performance & Practice Journey',
+                s4_p4_d: 'Pressure control & mixing: "Soft touch flows, hard touch solidifies", creating marble drip art.',
+                s4_p5_t: 'Outcome & Process Review',
+                s4_p5_d: 'Discussion & Role projection: "What does color look like? Who do you feel like?" (Chef, Artist, Scientist).',
+
+                s5_title: '5. Four Stages of Aesthetic Judgment: Eisner's Educational Criticism',
+                s5_desc: 'Eisner's Connoisseurship and Criticism are activated through teacher questioning, elevating children from automatic to controlled attention across four stages:',
+                s5_card_dual_h3: '💡 Prof. Liu's Guidance: Dual Application Levels of Art Connoisseurship & Criticism',
+                s5_card_dual_p: 'Prof. Liu emphasizes that Art Connoisseurship and Criticism serve two major applications in teaching and research:',
+                s5_dual_1_t: '1. Teacher Level: Qualitative Research on Learning Processes',
+                s5_dual_1_d: 'Applied by <strong>teachers conducting qualitative research on student learning processes/outcomes</strong>, serving as an observation method for psychological development.',
+                s5_dual_2_t: '2. Student Level: Criticism of Artwork & Material Phenomena',
+                s5_dual_2_d: 'Used by <strong>teachers guiding students to critique and reflect on artistic phenomena</strong> (such as non-Newtonian fluid behaviors), achieving perceptual re-education.',
+                s5_eisner_1_h: 'Art Connoisseurship <span class="badge">Child Quality Perception & Teacher Research</span>',
+                s5_eisner_1_p: 'Children sense subtle quality interactions ("hard under pressure, liquid when released") while teachers document development from a connoisseur's lens.',
+                s5_eisner_2_h: 'Art Criticism <span class="badge">Material Phenomena Criticism & Language Reconstruction</span>',
+                s5_eisner_2_p: 'Teachers guide dialogue on material behaviors, transforming tactile experiences among the five senses into public language and color stories.',
+                s5_sub_h3: '"Flow of Color" Eisner's 4 Stages & Controlled Attention Prompts:',
+                s5_st1_t: '1. Description',
+                s5_st1_g: '[Goal] Objective Observation & Sensory Texture Awareness',
+                s5_st1_c: '<strong style="color: var(--text-primary);">💬 Teacher Prompt:</strong><br>"What do you see when grabbing starch water? What happens when you let go?"<br><br><strong style="color: var(--text-primary);">👦 Child Response:</strong><br>"Squeezing tight feels hard like a stone, but opening my hand makes it slip through fingers like water!"',
+                s5_st2_t: '2. Analysis',
+                s5_st2_g: '[Goal] Relationship Exploration & Structural Regularities',
+                s5_st2_c: '<strong style="color: var(--text-primary);">💬 Teacher Prompt:</strong><br>"Why does starch turn hard and flow? How did you discover pigment spreading rules with glue?"<br><br><strong style="color: var(--text-primary);">👦 Child Response:</strong><br>"Particles hold hands tight when squeezed! Glue keeps color on paper when dry, and pigment drips spread like marble!"',
+                s5_st3_t: '3. Interpretation',
+                s5_st3_g: '[Goal] Imagery Association, Experience Retrieval & Meaning Construction',
+                s5_st3_c: '<strong style="color: var(--text-primary);">💬 Teacher Prompt:</strong><br>"What does this touch remind you of in life? Who do you feel like during exploration?"<br><br><strong style="color: var(--text-primary);">👦 Child Response:</strong><br>"It reminds me of mom making batter and summer rainbow juice! I feel like a scientist and artist exploring nature!"',
+                s5_st4_t: '4. Evaluation',
+                s5_st4_g: '[Goal] Value Judgment, Emotional Response & Aesthetic Reflection',
+                s5_st4_c: '<strong style="color: var(--text-primary);">💬 Teacher Prompt:</strong><br>"Which part of your drip artwork do you like most? How does it make you feel?"<br><br><strong style="color: var(--text-primary);">👦 Child Response:</strong><br>"I love the green swirl made by blue and yellow! Watching colors flow freely makes me feel calm and accomplished!"',
+
+                s6_title: '6. Comparative Analysis: "Flow of Color" vs. Value Theory & Educational Approaches',
+                s6_desc: 'Analyzing Teacher Yu-Chuan Kao's practice against Chapter 2 of "Early Childhood Art" (Liu & Ho):',
+                s6_th1: 'Theoretical Dimension',
+                s6_th2: 'Core Interpretation',
+                s6_th3: 'Practice Comparison in "Flow of Color"',
+                s6_r1_c1: '<strong>1. Intrinsic vs. Extrinsic Values</strong>',
+                s6_r1_c2: '<strong>Intrinsic:</strong> Aesthetic experience at core, focusing on sensory perception and imagery.<br><strong>Extrinsic:</strong> Catalyst for emotional catharsis, creativity, and motor control.',
+                s6_r1_c3: '<strong style="color: var(--accent-sage);">[Intrinsic]</strong> Experiencing unique touch and naming "Rainbow Juice".<br><strong style="color: var(--accent-blue);">[Extrinsic]</strong> Releasing emotions through squeezing and refining muscle control.',
+                s6_r2_c1: '<strong>2. Essential Human Values: Truth, Goodness, Beauty, Holiness</strong>',
+                s6_r2_c2: '<strong>Truth:</strong> Insight into nature laws.<br><strong>Goodness:</strong> Self-awareness & identity.<br><strong>Beauty:</strong> Aesthetic harmony.<br><strong>Holiness:</strong> Spiritual fulfillment.',
+                s6_r2_c3: '<strong style="color: var(--accent-amber);">[Truth]</strong> Exploring fluid mechanics.<br><strong style="color: var(--accent-sage);">[Goodness]</strong> Projecting roles (Artist/Scientist).<br><strong style="color: var(--accent-terracotta);">[Beauty]</strong> Savoring color fusion.<br><strong style="color: var(--accent-mauve);">[Holiness]</strong> Reaching "Flow" state.',
+                s6_r3_c1: '<strong>3. Integration of Three Orientations</strong>',
+                s6_r3_c2: 'Child-centered (SCAE), Discipline-based (DBAE), and Issue/Life-connected.',
+                s6_r3_c3: '<strong style="color: var(--accent-blue);">[Child]</strong> Free choice of pigment.<br><strong style="color: var(--accent-mauve);">[Discipline]</strong> Eisner criticism stages.<br><strong style="color: var(--accent-sage);">[Life]</strong> Linking to batter and juice.',
+                s6_r4_c1: '<strong>4. Spirituality-Oriented Holistic Education</strong>',
+                s6_r4_c2: 'Emphasizes "emergence of wholeness", integrating body, mind, and spirit.',
+                s6_r4_c3: '<strong style="color: var(--accent-sage);">Art & Science Integration:</strong> Merging physics with art for holistic growth.',
+                s6_r5_c1: '<strong>5. Preschool Curriculum Alignment</strong>',
+                s6_r5_c2: 'Exploration, Expression/Creation, Response/Appreciation.',
+                s6_r5_c3: '<strong style="color: var(--accent-blue);">[Mei-1-2]</strong> Sensory touch.<br><strong style="color: var(--accent-sage);">[Mei-2-1]</strong> Drip creation.<br><strong style="color: var(--accent-amber);">[Mei-3-1]</strong> Role response.',
+
+                s7_title: '7. Conclusion & Pedagogical Suggestions for Teachers',
+                s7_h3: '💡 5 Suggestions Grounded in Liu & Ho's Theory and "Flow of Color" Practice:',
+                s7_li1: '<strong>Focus on Sensory Experience over End Products:</strong> Emphasize guiding children to feel material changes (cool, soft, flowing yet hardening).',
+                s7_li2: '<strong>Create Environments of "Moderate Uncertainty":</strong> Leverage non-Newtonian fluid novelty (Berlyne) to spark curiosity.',
+                s7_li3: '<strong>Utilize Roleplay to Understand Roles & Self:</strong> Guide children to roleplay artists, chefs, and scientists to inspire self-trait recognition.',
+                s7_li4: '<strong>Guide Shift from Automatic to Controlled Attention:</strong> Use open-ended prompts (Schneider & Shiffrin) to help children enter "Flow".',
+                s7_li5: '<strong>Integrate Art into Daily Life Experience:</strong> Connect color textures with batter, juice, and candy to solidify abstract concepts.'
+            },
+            'ja': {
+                site_title: '幼児美術教育価値論と『色彩の流れ』実践の対比探析',
+                nav_1: '1. 理論的背景と実践的位置づけ',
+                nav_2: '2. イメージと理論的素材',
+                nav_3: '3. 三つの認知注意理論',
+                nav_gallery: '📷 授業風景写真記録',
+                nav_4: '4. 『色彩の流れ』アクションリサーチ',
+                nav_5: '5. 審美判断の4つのプロセス',
+                nav_6: '6. 価値論と教育アプローチの分析',
+                nav_7: '7. 結論と指導上の提言',
+
+                hero_tag_theory: '理論的基盤：劉豐榮 教授、何文玲 副教授',
+                hero_tag_practice: '授業実践：高玉娟 先生（嘉義市立大同國小）',
+                hero_h1: '幼児美術教育の価値論・目的・アプローチ：<br><span style="color: var(--accent-sage);">年長児『色彩の流れ』触覚カリキュラムの理論的対比</span>',
+                hero_desc: '本ウェブサイトは、劉豐榮教授・何文玲副教授共著『幼児美術』第2章（価値論・目的・アプローチ）と、高玉娟先生が実施した『色彩の流れ』触覚授業実践を学術的に統合したものです。',
+                hero_meta_1: '📚 理論的枠組み：<strong>前述著者『幼児美術』第2章「幼児美術教育の価値論、目的とアプローチ」</strong>',
+                hero_meta_2: '🏫 実践授業案：<strong>高玉娟 先生『色彩の時を彷徨う－触覚編：色彩の流れ』</strong> (2025)',
+                keywords_label: '🔑 核心キーワード (6個)：',
+                kw_1: '質的研究',
+                kw_2: '視覚芸術創作',
+                kw_3: '美術鑑賞と批評',
+                kw_4: '非ニュートン流体',
+                kw_5: 'フロー体験',
+                kw_6: '創造的注意の柔軟性',
+
+                card_1_h3: '理論と実践の有機的結合',
+                card_1_p: '「美術教育価値論」の機能が授業で具現化され、非ニュートン流体の操作が幼児の高度な認知と思考を示します。',
+                card_2_h3: '非ニュートン流体の感官探索',
+                card_2_p: '片栗粉・水・白のりを組み合わせ、「冷たくて柔らかく、流れるが固まる」触覚の中で制御と創造を体験します。',
+                card_3_h3: '3大注意理論による裏付け',
+                card_3_p: 'Berlyne（適度な不確実性）、Schneider & Shiffrin（自動的注意から制御的注意フローへ）、Marschalek（効率的注意）を融合。',
+                card_4_h3: '役割の投影と自己アイデンティティ',
+                card_4_p: '調合した色に名前を付け（「虹のジュース」など）、「芸術家・科学者・料理人・ダンサー」として自己を投影します。',
+
+                gallery_title: '『色彩の流れ』年長児の実際の授業風景写真記録',
+                gallery_desc: '以下は高玉娟先生による授業風景写真で、『幼児美術』理論および3大認知注意心理学を実証するものです：',
+
+                p1_tag: '写真 1：触覚と適度な不確実性',
+                p1_title: '非ニュートン流体の触覚探索',
+                p1_desc: '園児が両手で片栗粉水をすくい、「冷たくて柔らかく、流れるが固まる」触覚刺激を体験します（Berlyne 1971）。',
+
+                p2_tag: '写真 2：混色と審美的探索',
+                p2_title: '「虹のジュース」調色と命名',
+                p2_desc: '絵の具と片栗粉を混ぜ合わせて色の変化を観察し、「虹のジュース」と命名して審美的探索を深めます。',
+
+                p3_tag: '写真 3：制御的注意の発達',
+                p3_title: '道具操作と滴下量のコントロール',
+                p3_desc: '滴下テクニックに注意を集中させ（Schneider & Shiffrin 1977 制御的注意）、水量と力の加減を学びます。',
+
+                p4_tag: '写真 4：自動的創作とフロー',
+                p4_title: 'マーブル模様の色彩流動作品',
+                p4_desc: '熟練した「自動的」な混色創作へと進み、「フロー (Flow)」状態に入って美しい流動模様を描きます。',
+
+                p5_tag: '写真 5：創造的注意の柔軟性',
+                p5_title: '流動観察と役割投影の集中',
+                p5_desc: '流体の観察と自由な想像の間を迅速に行き来し（Marschalek 1983）、創造的注意の柔軟性を示します。',
+
+                p6_tag: '写真 6：生活経験と役割体験',
+                p6_title: '「ぼくは科学者、料理人、芸術家」',
+                p6_desc: '床に座って流体と固体の変化を体感し、生地やジュースの経験と結びつけ、創作者としての自己を確立します。',
+
+                s1_title: '1. 理論的背景と実践的位置づけ',
+                s1_desc: '本実践は劉豐榮教授・何文玲副教授共著『幼児美術』第2章に基づき、高玉娟先生が幼稚園で具現化したものです：',
+                s1_c1_title: '🏛️ 1. 劉豐榮教授・何文玲副教授の核心理論',
+                s1_c1_li1: '<strong>「価値論 → 目的論 → 方法論」の階層的発展：</strong>教育方法（いかに教えるか）は教育目的（何を教えるか）に基づき、目的は価値観（なぜ教えるか）に由来する。',
+                s1_c1_li2: '<strong>精神指向の全人美術教育：</strong>芸術の「内在的価値（本質論：美の体験）」と「外在的価値（文脈論：芸術療法・社会機能）」を統合し、真善美聖の人間本質価値を実現する。',
+                s1_c1_li3: '<strong>美の領域能力の育成：</strong>探索・表現・応答・鑑賞を通じ、身体・心・精神の全体的発達と主体の自己認識および適正な発達を重視する。',
+                s1_c2_title: '🌱 2. 高玉娟先生『色彩の流れ』の実踐的位置づけ',
+                s1_c2_li1: '<strong>「触覚と色彩知覚」を主軸に：</strong>価値論が強調する感官自覚と美の体験に応じ、非ニュートン流体を媒介として使用。',
+                s1_c2_li2: '<strong>プロセスと品質思考指向：</strong>単なる完成品重視を脱却し、「変化の探索、制御の練習、創造の試み」という内面的関与に集中。',
+                s1_c2_li3: '<strong>認知・注意理論による支え：</strong>Berlyne（視覚刺激）、Schneider & Shiffrin（フロー）、Marschalek（効率的注意）を通じて具体化。',
+                s1_summary: '💡 <strong>まとめ：</strong>『色彩の流れ』は、劉教授が提唱する「精神指向の全人美術教育」を、観察・検証可能な感覚探索へと還元・転換した実践です。',
+
+                s2_title: '2. 幼児美術学習の核心素材：イメージと理論の対比',
+                s2_desc: '劉教授は、美術探求の素材は「非言語的イメージ」と「言語的理論」からなると提唱します。本授業では以下のように交錯します：',
+                s2_c1_title: '1. イメージ素材 (Images) の実践',
+                s2_c1_li1: '<strong>外在的イメージ：</strong>流体の線、水性の変化、絵の具の滴下効果、のりの粘度。',
+                s2_c1_li2: '<strong>内在的イメージと触覚知覚：</strong>触覚（冷たい、柔らかい）や運動感覚（力を抜くと流れ、入れると固まる）、および心理的感情のイメージ。',
+                s2_c1_quote: '園児の言葉：「片栗粉を触ると、温かくてリラックスして、冷たくて柔らかい感じがする。」',
+                s2_c2_title: '2. 理論的素材 (Theories) の実践',
+                s2_c2_li1: '<strong>美學・心理學理論：</strong>Berlyne、Schneider & Shiffrin、Marschalekの審美判断認知モデルの導入。',
+                s2_c2_li2: '<strong>自然科學與生活連結：</strong>流体力学の法則探索と、日常の連想（砂浜、生地、ジュース、スライム）。',
+                s2_c2_quote: '園児の役割投影：「操作しているとき、自分が芸術家や科学者やダンス家になった気分！」',
+
+                s3_title: '3. 『色彩の流れ』が依拠する3大認知注意理論',
+                s3_desc: '本授業案は注意力の育成と創造性の発展を結びつけ、3つの認知心理学理論を融合させています：',
+                s3_card_main_h3: '💡 劉豐榮教授の特別注記：《注意モードの意義》と教育的転換',
+                s3_card_main_p: '劉教授は、美術指導の鍵は学習者を「制御的注意」へと導くことにあり、それによって初めて学習の成果が現れると指摘します：',
+                s3_m1_title: '1. 自動的注意モード (Automatic Attention)',
+                s3_m1_desc: '<strong>定義：</strong>外在的な物理的刺激のみによって誘発される。<br><strong>授業の現れ：</strong>園児が片栗粉水の感触や色の流動という物理刺激に惹きつけられる状態（受動的探索）。',
+                s3_m2_title: '2. 制御的注意モード (Controlled Attention)',
+                s3_m2_desc: '<strong>定義：</strong>内在的な記憶や認知戦略によって誘発される。<strong>【学習の成果を示す】</strong><br><strong>授業の現れ：</strong>過去の生活経験（生地・ジュース）を思い出し、調色や固定の工夫を能動的に考える。',
+                s3_m3_title: '3. 学習転換の鍵 (Learning Transition)',
+                s3_m3_desc: '<strong>核心的哲学：</strong>「学習を通じてのみ、受動的な自動的注意から高次元の制御的注意へと到達できる。」<br><strong>教育的価値：</strong>問いかけにより、園児の注意力の飛躍的成長をスムーズに促す。',
+                s3_acc_1_h: '一、Berlyne (1971)：動機付けと審美探索（適度な不確実性）',
+                s3_acc_1_c: '<strong>核心的觀點：</strong>斬新で複雑な刺激に対して探索動機が生じる。<br><strong>授業実践：</strong>非ニュートン流体の粘度変化と混色が興味を持続させ、「虹のジュース」などの命名につながる。',
+                s3_acc_2_h: '二、Schneider & Shiffrin (1977)：自動的注意から制御的注意へ、商してフロー体験へ',
+                s3_acc_2_c: '<strong>核心的觀點：</strong>注意が自動から制御へと進み、フロー状態が生まれる。<br><strong>授業実践：</strong>技術の習得に伴い自律的な注意運用へと至り、没頭した「フロー」状態で創作を行う。',
+                s3_acc_3_h: '三、Marschalek (1983)：注意の柔軟性と反応戦略学習',
+                s3_acc_3_c: '<strong>核心的觀點：</strong>反応戦略の学習が効率的で柔軟な注意力をもたらす。<br><strong>授業実践：</strong>流体の観察と自由な想像の間を迅速に行き来し、多次元の注意の柔軟性を示す。',
+
+                s4_title: '4. 授業アクションリサーチ：『色彩の流れ』の実踐',
+                s4_desc: '劉教授は美術教育実践を「研究者＝行動者」の探究モデルとして位置づけます。高玉娟先生は以下の5段階で循環実践を行いました：',
+                s4_p1_t: '自己観察と検証',
+                s4_p1_d: '手触りの体感：「片栗粉を触るとどんな感じ？」（柔らかい、すべすべ、ねばねば）。',
+                s4_p2_t: '課題と方向性の発見',
+                s4_p2_d: '法則の観察：「水を加えるとどう変わる？」（沈殿する、多く入れると硬くなる）。',
+                s4_p3_t: '創作計画と案の策定',
+                s4_p3_d: '添加物の実験：「なぜ白のりを混ぜるの？」（乾いた後も色を紙に残すため）。',
+                s4_p4_t: '表現と実践プロセス',
+                s4_p4_d: '力加減と混色：「優しく触ると流れ、強く押すと固まる」、滴下創作と色への命名。',
+                s4_p5_t: '成果とプロセスの振り返り',
+                s4_p5_d: '対話と役割投影：「何に見える？自分は誰になった気分？」（料理人、芸術家、科學家）。',
+
+                s5_title: '5. 審美判断の4つのプロセス：Eisnerの教育批評觀',
+                s5_desc: 'Eisnerの「芸術鑑賞」と「芸術批評」は、教師の問いかけを通じて自動的注意から制御的注意へと高められ、4つのプロセスを展開します：',
+                s5_card_dual_h3: '💡 劉豐榮教授の特別指導：美術鑑識と批評の二重応用レベル',
+                s5_card_dual_p: '劉教授は、「美術鑑識と批評」には教育と研究において2つの重要な応用側面があると強調します：',
+                s5_dual_1_t: '1. 教師側：学習プロセスの質的研究方法',
+                s5_dual_1_d: '主に<strong>教師が児童の学習過程や結果に対して質的研究を行う</strong>際の、心理発達の観察・記録手法として適用される。',
+                s5_dual_2_t: '2. 児童側：作品やメディア現象への批評指導',
+                s5_dual_2_d: '教師がこのステップを用いて<strong>児童に作品や芸術現象（非ニュートン流体の特性等）を批評・反省させる</strong>指導を行う。',
+                s5_eisner_1_h: '芸術鑑賞 (Connoisseurship & Appreciation) <span class="badge">園児の品質感知と教師の質的觀察</span>',
+                s5_eisner_1_p: '園児が片栗粉の流動性を手のひらで鋭く感じ取ると同時に、教師も鑑識の視点から発達を観察記録します。',
+                s5_eisner_2_h: '芸術批評 (Art Criticism) <span class="badge">メディア現象批評言語言語再構築</span>',
+                s5_eisner_2_p: '流体の変化や自身の創作について対話し、《五感における触覚》の体験を公的な言語と色の物語へと転換します。',
+                s5_sub_h3: '『色彩の流れ』Eisnerの4段階と制御的注意の問いかけ実践：',
+                s5_st1_t: '1. 記述 (Description)',
+                s5_st1_g: '【目標】客観的觀察と感覚的質観の気づき',
+                s5_st1_c: '<strong style="color: var(--text-primary);">💬 教師の問いかけ：</strong><br>「片栗粉水を両手ですくった時、何が見えた？手を緩めるとどうなった？」<br><br><strong style="color: var(--text-primary);">👦 園児の応答：</strong><br>「強く握ると石みたいに固いけど、力を抜くと指の隙間から水みたいに流れる！」',
+                s5_st2_t: '2. 分析 (Analysis)',
+                s5_st2_g: '【目標】関係探求と材質構造の法則性',
+                s5_st2_c: '<strong style="color: var(--text-primary);">💬 教師の問いかけ：</strong><br>「なぜ固くなったり流れたりするの？のりを混ぜた時と色が広がる法則は？」<br><br><strong style="color: var(--text-primary);">👦 園児の応答：</strong><br>「ギューッと押すと粒の手と手が繋がって固くなる！のりは乾いて紙に残すためで、マーブルみたいに広がるよ！」',
+                s5_st3_t: '3. 解釈 (Interpretation)',
+                s5_st3_g: '【目標】イメージの連想・経験の引き出しと意味の構築',
+                s5_st3_c: '<strong style="color: var(--text-primary);">💬 教師の問いかけ：</strong><br>「この色や手触りは普段のどんな体験を思い出す？探求している時自分は誰になった気分？」<br><br><strong style="color: var(--text-primary);">👦 園児の応答：</strong><br>「お母さんが生地を捏ねる時や夏に飲むジュース！自然を調べる科学者や芸術家になった気分！」',
+                s5_st4_t: '4. 評価 (Evaluation)',
+                s5_st4_g: '【目標】価値判断・感情的応答と美の振り返り',
+                s5_st4_c: '<strong style="color: var(--text-primary);">💬 教師の問いかけ：</strong><br>「今回の絵の具作品で一番好きな部分はどこ？どんな気持ちがした？」<br><br><strong style="color: var(--text-primary);">👦 園児の応答：</strong><br>「青と黄が混ざった黄緑の流れる線が好き！色が自由に流れるのを見ると、心が落ち着いて達成感がある！」',
+
+                s6_title: '6. 分析対比：『色彩の流れ』vs 第2章「価値論・目的・アプローチ」',
+                s6_desc: '劉教授・何副教授の理論枠組みに基づき、高玉娟先生の授業実践を比較分析します：',
+                s6_th1: '第2章理論的次元',
+                s6_th2: '核心的理論の解釈',
+                s6_th3: '『色彩の流れ』授業実践との比較',
+                s6_r1_c1: '<strong>1. 内在的價值 vs. 外在的價值</strong>',
+                s6_r1_c2: '<strong>内在的：</strong>美の体験が核心で、感覚の気づきと満足を強調。<br><strong>外在的：</strong>情緒の発散、創造性、運動能力の促進。',
+                s6_r1_c3: '<strong style="color: var(--accent-sage);">[内在]</strong> 独自の触覚を感じ「虹のジュース」と命名。<br><strong style="color: var(--accent-blue);">[外在]</strong> 捏ねる動作で感情を発散し筋肉を精練。',
+                s6_r2_c1: '<strong>2. 人間本質価値：真・善・美・聖</strong>',
+                s6_r2_c2: '<strong>真：</strong>自然法則の探求。<br><strong>善：</strong>自己覚察と役割認同。<br><strong>美：</strong>美の調和。<br><strong>聖：</strong>全人的精神の成就。',
+                s6_r2_c3: '<strong style="color: var(--accent-amber);">[真]</strong> 流体力学の法則を探求。<br><strong style="color: var(--accent-sage);">[善]</strong> 役割投影（科学者/芸術家）。<br><strong style="color: var(--accent-terracotta);">[美]</strong> 色彩の融合を味わう。<br><strong style="color: var(--accent-mauve);">[聖]</strong> 「フロー」状態の達成。',
+                s6_r3_c1: '<strong>3. 3つの教育アプローチの統合</strong>',
+                s6_r3_c2: '児童中心（SCAE）、教科中心（DBAE）、生活・テーマ連結。',
+                s6_r3_c3: '<strong style="color: var(--accent-blue);">[児童]</strong> 自由な絵の具の選択。<br><strong style="color: var(--accent-mauve);">[教科]</strong> Eisnerの批評4段階。<br><strong style="color: var(--accent-sage);">[生活]</strong> 生地やジュースへの連想。',
+                s6_r4_c1: '<strong>4. 現代の精神指向の全人美術教育</strong>',
+                s6_r4_c2: '「全体性の発現」を強調し、身体・心・精神を統合。',
+                s6_r4_c3: '<strong style="color: var(--accent-sage);">芸術と科学の統合：</strong>物理現象の探求を美術操作に融合した全人的発達。',
+                s6_r5_c1: '<strong>5. 幼児教育要領美の領域との整合</strong>',
+                s6_r5_c2: '探索・表現・応答の能力と、感性・メディアの側面。',
+                s6_r5_c3: '<strong style="color: var(--accent-blue);">[美1-2]</strong> 五感による感知。<br><strong style="color: var(--accent-sage);">[美2-1]</strong> 混色滴下創作。<br><strong style="color: var(--accent-amber);">[美3-1]</strong> 役割と好みへの応答。',
+
+                s7_title: '7. 結論と幼稚園教諭への指導上の提言',
+                s7_h3: '💡 理論と実践に基づく5つの指導提言：',
+                s7_li1: '<strong>成果物よりも感官体験に集中する：</strong>材料の変化を五感で感じる指導に重点を置き、自由な操作を励ます。',
+                s7_li2: '<strong>「適度な不確実性」の環境を創出する：</strong>非ニュートン流体の新奇性（Berlyne）を活用し、好奇心を刺激する。',
+                s7_li3: '<strong>ごっこ遊びを通じた役割と自己の理解：</strong>芸術家や料理人を演じさせ、自己の特性への気づきを促す。',
+                s7_li4: '<strong>「自動的注意」から「制御的注意」へ導く：</strong>問いかけ（Schneider & Shiffrin）を通じて経験を引き出し、「フロー」へと導く。',
+                s7_li5: '<strong>美術を生活と結びつける：</strong>感触を「生地、ジュース、キャンディ」と結びつけ、抽象的体験を具現化する。'
+            }
+        };
+
+        function switchLang(lang) {
+            if (!i18nData || !i18nData[lang]) return;
+            
+            // Highlight active button safely using data-lang
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                const bLang = btn.getAttribute('data-lang');
+                if (bLang === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Update textContent elements
+            const textEls = document.querySelectorAll('[data-i18n]');
+            textEls.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (key && i18nData[lang] && i18nData[lang][key]) {
+                    el.textContent = i18nData[lang][key];
+                }
+            });
+
+            // Update innerHTML elements
+            const htmlEls = document.querySelectorAll('[data-i18n-html]');
+            htmlEls.forEach(el => {
+                const key = el.getAttribute('data-i18n-html');
+                if (key && i18nData[lang] && i18nData[lang][key]) {
+                    el.innerHTML = i18nData[lang][key];
+                }
+            });
+
+            // Update HTML document lang
+            document.documentElement.lang = lang;
+
+            // Try saving preference to localStorage and URL
+            try {
+                localStorage.setItem('pref_lang', lang);
+            } catch(e) {}
+
+            try {
+                if (window.history && window.history.replaceState) {
+                    const url = new URL(window.location);
+                    url.searchParams.set('lang', lang);
+                    window.history.replaceState({}, '', url);
+                }
+            } catch(e) {}
+        }
+
+        function initI18n() {
+            // Bind click handlers to language buttons
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                const lang = btn.getAttribute('data-lang');
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    switchLang(lang);
+                });
+            });
+
+            // Detect preferred language from URL parameter or localStorage
+            let targetLang = 'zh-TW';
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const queryLang = urlParams.get('lang');
+                if (queryLang && i18nData[queryLang]) {
+                    targetLang = queryLang;
+                } else {
+                    const saved = localStorage.getItem('pref_lang');
+                    if (saved && i18nData[saved]) {
+                        targetLang = saved;
+                    }
+                }
+            } catch(e) {}
+
+            switchLang(targetLang);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initI18n);
+        } else {
+            setTimeout(initI18n, 0);
+        }
+    </script>
 </head>
 <body>
 
@@ -723,9 +1321,9 @@
 
             <!-- 🌐 多國語言切換按鈕 (純文字無國家簡稱) -->
             <div class="lang-switcher">
-                <button class="lang-btn active" data-lang="zh-TW" onclick="switchLang('zh-TW')">繁體中文</button>
-                <button class="lang-btn" data-lang="en" onclick="switchLang('en')">English</button>
-                <button class="lang-btn" data-lang="ja" onclick="switchLang('ja')">日本語</button>
+                <button type="button" class="lang-btn active" data-lang="zh-TW" onclick="switchLang('zh-TW')">繁體中文</button>
+                <button type="button" class="lang-btn" data-lang="en" onclick="switchLang('en')">English</button>
+                <button type="button" class="lang-btn" data-lang="ja" onclick="switchLang('ja')">日本語</button>
             </div>
 
             <ul class="nav-links">
@@ -1256,556 +1854,9 @@
         <p>© 2026 幼兒藝術教育價值論與《色彩之流》教學對接探析 | Based on Liu, Ho & Kao (2025)</p>
     </footer>
 
-    <!-- JavaScript 多國語言 i18n 核心庫 (經相容性防錯優化) -->
+    <!-- 頁面初始化與互動手勢支援 -->
     <script>
-        const i18nData = {
-            'zh-TW': {
-                site_title: '幼兒藝術教育價值論與《色彩之流》教學對接探析',
-                nav_1: '1. 理論背景與實踐定位',
-                nav_2: '2. 意象與理論素材',
-                nav_3: '3. 三大注意力理論',
-                nav_gallery: '📷 課堂照片紀錄',
-                nav_4: '4. 《色彩之流》行動研究',
-                nav_5: '5. 審美判斷之四個歷程',
-                nav_6: '6. 價值論與教育取向分析',
-                nav_7: '7. 結論與教學建議',
-
-                hero_tag_theory: '理論基礎：劉豐榮 教授、何文玲 副教授',
-                hero_tag_practice: '教學實踐：高玉娟 老師（嘉義市大同國小）',
-                hero_h1: '幼兒藝術教育之價值論、目的與取向：<br><span style="color: var(--accent-sage);">大班幼兒《色彩之流》實踐教案之理論對接</span>',
-                hero_desc: '本網頁依據劉豐榮教授與何文玲副教授合著之《幼兒藝術》中第二章 幼兒藝術教育之價值論、目的與取向，與高玉娟老師於嘉義市大同國小實施之《色彩之流》大班幼兒觸覺教案進行深度理論對接與實務定位整理。',
-                hero_meta_1: '📚 理論架構：<strong>前述作者之《幼兒藝術》中第二章 幼兒藝術教育之價值論、目的與取向</strong>',
-                hero_meta_2: '🏫 實務教案：<strong>高玉娟 老師《徜徉色彩時光－觸覺篇：色彩之流》</strong> (2025)',
-                keywords_label: '🔑 核心關鍵字 (6 個)：',
-                kw_1: '質化研究',
-                kw_2: '視覺藝術創作',
-                kw_3: '藝術鑑賞與批評',
-                kw_4: '非牛頓流體',
-                kw_5: '心流體驗',
-                kw_6: '創造性注意力彈性',
-
-                card_1_h3: '理論與實務有機結合',
-                card_1_p: '前述「藝術教育價值論」之藝術功能可在《色彩之流》教案中獲得落實，非牛頓流體操作展現幼兒的高層認知與造形思考。',
-                card_2_h3: '非牛頓流體感官探索',
-                card_2_p: '結合太白粉、水與白膠，幼兒在「冰冰的、軟軟的、會流動又會變硬」的觸覺中經歷控制與創造。',
-                card_3_h3: '三大注意力理論支撐',
-                card_3_p: '融合 Berlyne（適度不確定性）、Schneider & Shiffrin（自動化的注意到控制自如的注意，進而展現自由的心流）與 Marschalek（反應策略的學習可達有效率的注意力）。',
-                card_4_h3: '角色投射與認同',
-                card_4_p: '幼兒命名自調顏色（如「彩虹果汁」），投射自我身份為「藝術家、科學家、廚師與跳舞家」。',
-
-                gallery_title: '《色彩之流》大班幼兒真實教學現場照片紀錄',
-                gallery_desc: '以下照片摘錄自高玉娟老師於嘉義市大同國小實施之《色彩之流》教案現場紀錄，對接與佐證《幼兒藝術》之理論與三大注意力心理學：',
-
-                p1_tag: '照片 1：觸覺與適度不確定性',
-                p1_title: '抓取非牛頓流體感官探索',
-                p1_desc: '幼兒雙手抓起太白粉水，體驗「冰冰的、軟軟的、會流動又會變硬」的觸覺刺激（Berlyne 1971 適度不確定性）。',
-
-                p2_tag: '照片 2：混色與審美探索',
-                p2_title: '「彩虹果汁」調色與色彩命名',
-                p2_desc: '幼兒在容器中混合顏料與太白粉，觀察顏色變化並為調配色彩命名「彩虹果汁」，展現審美探索心理參與。',
-
-                p3_tag: '照片 3：控制性注意發展',
-                p3_title: '工具操作與水量滴流控制',
-                p3_desc: '幼兒集中注意力觀察材料混合與滴流技巧（Schneider & Shiffrin 1977 控制性注意），學習調整水量與力道。',
-
-                p4_tag: '照片 4：自動化創作與心流',
-                p4_title: '大理石紋色彩流動作品',
-                p4_desc: '幼兒邁向熟練的「自動化」混色創作，進入類似「心流 (Flow)」狀態，於紙面上留下斑欄流暢的造型。',
-
-                p5_tag: '照片 5：注意力彈性與聚焦',
-                p5_title: '專注滴流創作與角色投射',
-                p5_desc: '幼兒在觀察材料流動與聯想想像之間靈活轉換（Marschalek 1983），展現創造性注意力彈性。',
-
-                p6_tag: '照片 6：生活經驗與角色體驗',
-                p6_title: '「我是科學家、廚師與藝術家」',
-                p6_desc: '幼兒坐在地上體驗流體固體變化，將經驗連結至麵糊與果汁，並建立創作者角色自我認同。',
-
-                s1_title: '理論背景與教學實踐之定位（依核心文獻精確對接）',
-                s1_desc: '本教學實踐係依據劉豐榮教授與何文玲副教授合著《幼兒藝術》中第二章 幼兒藝術教育之價值論、目的與取向衍生構思，並由高玉娟老師於嘉義市大同國小大班幼兒課堂落實。其理論立論與教學實踐定位整理如下：',
-                s1_c1_title: '🏛️ 1. 劉豐榮教授與何文玲副教授之核心理論立論',
-                s1_c1_li1: '<strong>「價值論 → 目的論 → 方法論」層級遞進：</strong>教育方法（如何教）必須立基於教育目的（教什麼），而目的則導源於價值觀（為何而教）。',
-                s1_c1_li2: '<strong>精神性取向全人藝術教育：</strong>主張統合藝術的「內在價值（本質論：含美感體驗…）」與「外在價值（脈絡論：含藝術治療、藝術社會功能…）」，以實現真善美聖之人類本質價值。',
-                s1_c1_li3: '<strong>美感領域能力培養：</strong>強調幼兒在探索覺察、表現創作、回應與賞析中獲得整體性身心靈之發展與主體之自我認識與適當發展。',
-                s1_c2_title: '🌱 2. 高玉娟老師《色彩之流》之實踐定位',
-                s1_c2_li1: '<strong>以「觸覺與色彩感知」為課程主軸：</strong>響應價值論中對幼兒「感官覺察與美感體驗」的重視，以非牛頓流體（太白粉、水、白膠）為媒介。',
-                s1_c2_li2: '<strong>歷程與品質思考導向：</strong>將教學定位於「探索變化、練習控制、嘗試創造」，打破過往「只重精美產物」的迷思，專注於幼兒內在心理參與。',
-                s1_c2_li3: '<strong>認知與注意力理論支撐：</strong>將抽象的美感價值之體驗與學習轉化為基於理論的具體課堂活動，達有效的學習。這些理論包括： Berlyne（適度的視覺刺激）、Schneider & Shiffrin（自動化的注意到控制自如的注意，進而展現自由的心流）與 Marschalek（反應策略的學習可達有效率的注意力）等。',
-                s1_summary: '💡 <strong>綜結：</strong>《色彩之流》之教學嘗試將劉豐榮教授倡導的「精神性取向全人藝術教育」觀點，落實與轉化為幼兒園大班課堂中可操作、可觀察、可驗證的適齡感官探索歷程。',
-
-                s2_title: '幼兒藝術學習的核心素材：意象與理論之對接',
-                s2_desc: '劉豐榮教授提出藝術探討的素材來自「非語言屬性之意象」與「語言屬性之理論」。在《色彩之流》教學中，此兩大素材交織如下：',
-                s2_c1_title: '1. 意象素材 (Images) 實踐',
-                s2_c1_li1: '<strong>外在意象：</strong>太白粉流體之線條、水性變化、顏料滴流效果、白膠混合黏稠度。',
-                s2_c1_li2: '<strong>內在意象與感官知覺：</strong>觸覺（冰冰的、軟軟的、毛毛的）、肌肉運動感（手部力道輕會流掉、用力會變硬）。以及表現的內容，如心理的想法與情意呈現的意象。',
-                s2_c1_quote: '幼兒真實話語：「太白粉摸起來溫暖的、輕鬆的、冰冰的、軟軟的感覺。」',
-                s2_c2_title: '2. 理論素材 (Theories) 實踐',
-                s2_c2_li1: '<strong>美學與心理學理論：</strong>融入 Berlyne 、Schneider 與Shiffrin 以及Marschalek 之審美判斷認知理論。',
-                s2_c2_li2: '<strong>自然科學與生活連結：</strong>非牛頓流體材質探究規律、生活聯想（沙灘、麵糊、果汁、史萊姆）。',
-                s2_c2_quote: '幼兒角色投射：「我覺得自己在操作的時候是一位藝術家、跳舞家、科學家！」',
-
-                s3_title: '《色彩之流》所依據的三大認知注意力理論',
-                s3_desc: '《色彩之流》教案嘗試將注意力培養與創造力發展結合，對接與融合了三大認知心理學理論：',
-                s3_card_main_h3: '💡 劉豐榮教授特別註明：《注意模式的意義》與教學轉化',
-                s3_card_main_p: '劉豐榮教授特別指出，藝術教學關鍵在於帶領學習者經歷注意力模式的提升與深化，唯有達到「控制的注意」，才能真正體現藝術學習之實質成效：',
-                s3_m1_title: '1. 自動的注意模式 (Automatic Attention)',
-                s3_m1_desc: '<strong>核心定義：</strong>僅由外在「物理的刺激」所促發。<br><strong>課堂呈現：</strong>幼兒被太白粉水冰冰軟軟的觸覺與顏料流動等外在物理刺激吸引（被動感官探索）。',
-                s3_m2_title: '2. 控制的注意模式 (Controlled Attention)',
-                s3_m2_desc: '<strong>核心定義：</strong>由「內在來源（如以前的學習或認知策略）」所促發。<strong>【此顯示學習之成效】</strong><br><strong>課堂呈現：</strong>幼兒主動提取過去生活經驗（麵糊、果汁）、思考調色與白膠固定策略（主動認知策略）。',
-                s3_m3_title: '3. 學習轉化關鍵 (Learning Transition)',
-                s3_m3_desc: '<strong>核心哲學：</strong>「透過學習，才能由被動的自動注意模式，達到較高層次的控制注意模式。」<br><strong>教學價值：</strong>教師透過《色彩之流》開放性提問，引導孩子順暢完成注意力的實質躍升與成長。',
-                s3_acc_1_h: '一、Berlyne (1971)：認知動機與審美探索（適度不確定性與視覺刺激）',
-                s3_acc_1_c: '<strong>核心觀點：</strong>個體對「新奇、複雜、不確定」刺激產生探索動機與適度的視覺刺激。<br><strong>教學呈現：</strong>非牛頓流體黏稠變化與混色具高度新奇性。幼兒感受「冰冰的、軟軟的、會流動又會變硬」，自然激發穩定而持久的注意力與學習投入，並為自調顏色命名（如「彩虹果汁」）。',
-                s3_acc_2_h: '二、Schneider & Shiffrin (1977)：自動化的注意到控制自如的注意，進而展現自由的心流',
-                s3_acc_2_c: '<strong>核心觀點：</strong>注意力經歷從「自動化的注意」邁向「控制自如的注意」，進而展現自由的心流。<br><strong>教學呈現：</strong>幼兒初期需集中注意觀察水量與滴流技巧；隨著操作熟悉與引導，達到控制自如的注意力運作，進入專注愉悅的「心流 (Flow)」創作狀態。',
-                s3_acc_3_h: '三、Marschalek (1983)：注意力的彈性與反應策略學習（有效率的注意力）',
-                s3_acc_3_c: '<strong>核心觀點：</strong>反應策略的學習可達有效率的注意力與創造性彈性。<br><strong>教學呈現：</strong>幼兒不僅聚焦觀察材料流動，也能迅速轉換至聯想（「這像棒棒糖」、「我是小廚師」），展現感官-情緒-語言-概念間的多層次注意力彈性。',
-
-                s4_title: '教學行動探究：《色彩之流》課堂實務',
-                s4_desc: '劉豐榮教授指出，藝術教學行動屬於「研究者即行動者」的個案與行動探究。高玉娟老師在嘉義市大同國小將行動研究貫徹為以下五個實務循環階段：',
-                s4_p1_t: '自我觀察與檢視',
-                s4_p1_d: '引導幼兒體驗手感：「太白粉摸起來感覺怎樣？」（軟軟的、滑滑的、黏黏的）。',
-                s4_p2_t: '尋找問題與方向',
-                s4_p2_d: '觀察材質探究規律：「太白粉加水之後有什麼變化？」（太白粉會沉澱、粉多會變硬）。',
-                s4_p3_t: '創作計畫與方案',
-                s4_p3_d: '實驗加入不同物質：「為什麼加白膠？」（為了讓顏料乾了之後能保留在紙上）。',
-                s4_p4_t: '表現與實踐歷程',
-                s4_p4_d: '力道控制與混色：「力道輕輕的會流掉，用力的會變硬」，進行滴流創作與色彩命名。',
-                s4_p5_t: '成果與歷程檢討',
-                s4_p5_d: '分享討論與角色投射：「顏色像什麼？你覺得你像誰？」（廚師、藝術家、科學家）。',
-
-                s5_title: '審美判斷之四個歷程：Eisner 教育批評觀點應用於課堂之兒童心理轉化',
-                s5_desc: 'Eisner 的「藝術鑑賞（感受品質細節）」與「藝術批評（用語言重構美感）」在《色彩之流》教學中，透過教師精心設計的開放性提問，引導孩子從被動的「自動注意（感官刺激）」提升為主的「控制注意（策略提取與經驗連結）」，並順暢展開經典的審美判斷四大歷程：',
-                s5_card_dual_h3: '💡 劉豐榮教授特別指導：藝術鑑識與批評之雙重應用層次',
-                s5_card_dual_p: '劉豐榮教授特別提醒，「藝術鑑識與藝術批評」在教學與研究中具備兩大核心應用面向：',
-                s5_dual_1_t: '1. 教師端：學習歷程之質性（質化）研究',
-                s5_dual_1_d: '主要應用在<strong>教師對學生學習過程或結果進行質性（質化）研究</strong>，作為評量、觀察與紀錄幼兒心理發展之學術與觀察方法。',
-                s5_dual_2_t: '2. 學生端：作品與媒材現象之批評指引',
-                s5_dual_2_d: '教師運用此步驟<strong>指導學生對作品或藝術現象（如非牛頓流體等藝術媒材特性）進行批評與反思</strong>，促成知覺再教育與意義建構。',
-                s5_eisner_1_h: '藝術鑑賞 (Connoisseurship & Appreciation) <span class="badge">幼兒品質感知與教師質化觀察</span>',
-                s5_eisner_1_p: '幼兒透過手指與掌心撫觸太白粉流體，敏銳感知「受力變硬、無力流動」的微細品質交互作用；同時教師亦以鑑識視角觀察記錄幼兒感知發展。',
-                s5_eisner_2_h: '藝術批評 (Art Criticism) <span class="badge">媒材現象批評與語言重構</span>',
-                s5_eisner_2_p: '教師透過問題引導幼兒對藝術媒材現象（如流體變化）與個人創作進行對話與批評，將《五感中的觸覺》體驗轉化為公眾語言與色彩故事。',
-                s5_sub_h3: '《色彩之流》對應 Eisner 審美判斷之四個歷程與控制注意提問實務：',
-                s5_st1_t: '1. 描述 (Description)',
-                s5_st1_g: '【目標】客觀觀察與感官質地覺察',
-                s5_st1_c: '<strong style="color: var(--text-primary);">💬 控制注意引導提問：</strong><br>「當你用雙手抓起太白粉水時，你觀察到什麼？放開手之後又發生了什麼現象？」<br><br><strong style="color: var(--text-primary);">👦 兒童回應轉化：</strong><br>「用力抓緊時感覺硬硬的像石頭，手一鬆開它就從手指縫流下來，變回水水的了！」',
-                s5_st2_t: '2. 分析 (Analysis)',
-                s5_st2_g: '【目標】關係探究與材質結構規律',
-                s5_st2_c: '<strong style="color: var(--text-primary);">💬 控制注意引導提問：</strong><br>「為什麼太白粉水會變硬又會流動？你如何發現加白膠跟調色時顏料擴散的規律？」<br><br><strong style="color: var(--text-primary);">👦 兒童回應轉化：</strong><br>「因為用力擠壓時顆粒手牽手變緊了！加白膠是為了讓顏色乾了之後留在紙上，顏料滴下去像大理石紋路慢慢擴散。」',
-                s5_st3_t: '3. 闡釋 (Interpretation)',
-                s5_st3_g: '【目標】意象聯想、經驗提取與意義建構',
-                s5_st3_c: '<strong style="color: var(--text-primary);">💬 控制注意引導提問：</strong><br>「這些流動的色彩與觸感，讓你聯想到生活中的什麼經驗？探索時你覺得自己像誰在做什麼？」<br><br><strong style="color: var(--text-primary);">👦 兒童回應轉化：</strong><br>「讓我想起媽媽做麵糊、還有夏天喝的彩虹果汁！我覺得自己像一位探索自然現象的科學家與藝術家。」',
-                s5_st4_t: '4. 評價 (Evaluation)',
-                s5_st4_g: '【目標】價值判斷、情感回應與美感反思',
-                s5_st4_c: '<strong style="color: var(--text-primary);">💬 控制注意引導提問：</strong><br>「在這次滴流創作中，你最喜愛作品的哪個部分？嘗試說說看它帶給你什麼感覺與想法？」<br><br><strong style="color: var(--text-primary);">👦 兒童回應轉化：</strong><br>「我最喜愛藍色與黃色混出來的嫩綠流紋！看著顏料自由流動時，我覺得心裡很平靜、很有成就感。」',
-
-                s6_title: '幼兒《色彩之流》藝術學習與「幼兒藝術教育價值論、目的與取向」分析對比',
-                s6_desc: '依據劉豐榮教授與何文玲副教授著作《幼兒藝術》中《第二章 幼兒藝術教育之價值論、目的與取向》之理論架構（含內在/外在價值、人類本質價值真善美聖、三大教育取向及教保大綱美感領域），深入分析對比高玉娟老師《色彩之流》大班幼兒藝術學習實務：',
-                s6_th1: '第二章理論向度 (Theory)',
-                s6_th2: '核心理論詮釋 (Concept)',
-                s6_th3: '《色彩之流》大班幼兒藝術學習實踐對比 (Practice)',
-                s6_r1_c1: '<strong>1. 內在價值 vs. 外在價值</strong><br>(Intrinsic vs. Extrinsic Values)',
-                s6_r1_c2: '<strong>內在價值（本質論）：</strong>美感經驗為藝術核心，強調感官覺察、造形意象與內在滿足。<br><strong>外在價值（脈絡論）：</strong>作為發展催化劑，促進創造力、情緒洗瀉淨化 (cathartic) 與手部協調。',
-                s6_r1_c3: '<strong style="color: var(--accent-sage);">【內在價值】</strong>幼兒以五官感受非牛頓流體「冰冰軟軟」的獨特觸覺境界，並命名自調色彩「彩虹果汁」，獲得心理滿足。<br><strong style="color: var(--accent-blue);">【外在價值】</strong>透過手的抓捏紓解情緒，發揮「創造性注意力」，並精練手部肌肉與力道控制。',
-                s6_r2_c1: '<strong>2. 人類本質價值：真、善、美、聖</strong><br>(Essential Human Values)',
-                s6_r2_c2: '<strong>真：</strong>生命規律洞察與材質特性的探究認知。<br><strong>善：</strong>自我覺察、角色認同與文化關懷。<br><strong>美：</strong>和諧心理與美感受力。<br><strong>聖：</strong>身心靈全人發展與終極價值。',
-                s6_r2_c3: '<strong style="color: var(--accent-amber);">【真】</strong>在操作中主動求真探究，感知太白粉受力變硬、無力流動的自然物質現象與力學規律。<br><strong style="color: var(--accent-sage);">【善】</strong>投射角色（「我是藝術家、科學家、廚師」），建構創作者認同。<br><strong style="color: var(--accent-terracotta);">【美】</strong>體驗色彩流動混色的美感，感受看到顏色時的幸福喜好。<br><strong style="color: var(--accent-mauve);">【聖】</strong>在滴流創作中達成全人身心靈和諧的「心流」境界。',
-                s6_r3_c1: '<strong>3. 三大教育取向之統合</strong><br>(Student, Discipline & Issue Orientations)',
-                s6_r3_c2: '<strong>學生取向 (SCAE/CCAE)：</strong>兒童中心，順應自然的感官探索。<br><strong>學科取向 (DBAE/DCAE)：</strong>創作、批評、美學與歷史。<br><strong>議題/生活取向：</strong>視覺文化與生活經驗連結。',
-                s6_r3_c3: '<strong style="color: var(--accent-blue);">【學生取向】</strong>幼兒自由選擇顏料、探索非牛頓流體。<br><strong style="color: var(--accent-mauve);">【學科取向】</strong>透過教師提問進行審美判斷之四個歷程學習。<br><strong style="color: var(--accent-sage);">【議題/生活取向】</strong>將流體聯想至日常經驗「麵糊、果汁、彩虹、史萊姆」。',
-                s6_r4_c1: '<strong>4. 當代精神性全人藝術教育</strong><br>(Spirituality-Oriented Holistic Education)',
-                s6_r4_c2: '強調「整體性之顯現 (emergence of wholeness)」，整合身心靈，促成主體性與美感境界的提昇（高度）、深化（深度）與融通（廣度）。',
-                s6_r4_c3: '<strong style="color: var(--accent-sage);">跨領域統整藝術與科學：</strong>將自然科學材質探究規律（非牛頓流體）融入藝術操作，實現感官、認知、情緒與生命體驗的跨領域全人發展。',
-                s6_r5_c1: '<strong>5. 幼兒教保大綱美感領域對接</strong><br>(Preschool Curriculum Alignment)',
-                s6_r5_c2: '包含三大領域能力（探索覺察、表現創作、回應與賞析）及兩大學習面向（情意、藝術媒介）。',
-                s6_r5_c3: '<strong style="color: var(--accent-blue);">【美-1-2】</strong>用五官感受非牛頓流體（覺知辨識）。<br><strong style="color: var(--accent-sage);">【美-2-1】</strong>發揮想像進行滴流混色創作（表現創作）。<br><strong style="color: var(--accent-amber);">【美-3-1】</strong>回應對自調色彩喜好與角色投射（回應與賞析）。',
-
-                s7_title: '結論與給幼兒園教師的教學建議',
-                s7_h3: '💡 結合劉豐榮教授與何文玲副教授理論與《色彩之流》經驗之給教師五大建議：',
-                s7_li1: '<strong>專注於感官體驗，而非藝術成果：</strong>重點放在引導幼兒感受材料變化（冰冰的、軟軟的、會流動又會變硬），鼓勵自由操作。',
-                s7_li2: '<strong>創造「適度不確定性」的環境：</strong>利用非牛頓流體的新奇性（Berlyne 理論），提供開放環境讓幼兒在充滿好奇的狀態下探索。',
-                s7_li3: '<strong>運用角色扮演，了解不同角色與認識自我：</strong>透過提問引導幼兒扮演藝術家、廚師、科學家，啟發對不同角色的了解與認識自我之特質。',
-                s7_li4: '<strong>引導從「自動的注意」到「控制的注意」：</strong>透過引導性提問（Schneider & Shiffrin 理論），幫助幼兒提取經驗並進入專注愉悅的「心流」狀態。',
-                s7_li5: '<strong>將藝術融入生活，建立經驗連結：</strong>將創作中的顏色觸感與「麵糊、果汁、彩虹、糖果」連結，幫助抽象藝術體驗具體化。'
-            },
-            'en': {
-                site_title: 'Early Childhood Art Value Theory & "Flow of Color" Analysis',
-                nav_1: '1. Theoretical Foundation',
-                nav_2: '2. Imagery & Material',
-                nav_3: '3. Three Attention Theories',
-                nav_gallery: '📷 Photo Gallery',
-                nav_4: '4. Action Research',
-                nav_5: '5. Four Stages of Criticism',
-                nav_6: '6. Value Theory Analysis',
-                nav_7: '7. Conclusion & Suggestions',
-
-                hero_tag_theory: 'Theoretical Basis: Prof. Feng-Jung Liu & Assoc. Prof. Wen-Ling Ho',
-                hero_tag_practice: 'Classroom Practice: Teacher Yu-Chuan Kao (Datong Elementary School)',
-                hero_h1: 'Value Theory, Purposes & Approaches in Early Childhood Art Education:<br><span style="color: var(--accent-sage);">Theoretical Alignment with "Flow of Color" Tactile Curriculum</span>',
-                hero_desc: 'This website synthesizes Chapter 2 of "Early Childhood Art" (Liu & Ho) with Teacher Yu-Chuan Kao's tactile lesson plan "Flow of Color" implemented at Datong Elementary School in Chiayi City.',
-                hero_meta_1: '📚 Framework: <strong>Chapter 2 "Value Theory, Purpose & Approaches", Early Childhood Art</strong>',
-                hero_meta_2: '🏫 Practice: <strong>Teacher Yu-Chuan Kao "Savoring Color - Tactile: Flow of Color"</strong> (2025)',
-                keywords_label: '🔑 Key Concepts (6):',
-                kw_1: 'Qualitative Research',
-                kw_2: 'Visual Arts Creation',
-                kw_3: 'Art Connoisseurship & Criticism',
-                kw_4: 'Non-Newtonian Fluid',
-                kw_5: 'Flow Experience',
-                kw_6: 'Creative Attention Flexibility',
-
-                card_1_h3: 'Organic Theory-Practice Integration',
-                card_1_p: 'The art functions in Value Theory are realized in "Flow of Color", exhibiting high-level cognitive and form thinking in young children.',
-                card_2_h3: 'Non-Newtonian Sensory Exploration',
-                card_2_p: 'Combining starch, water, and glue, children experience control and creation in tactile sensations of "cool, soft, flowing yet hardening".',
-                card_3_h3: 'Backed by Three Attention Theories',
-                card_3_p: 'Fusing Berlyne (Moderate Uncertainty), Schneider & Shiffrin (Automatic to Controlled Attention Flow), and Marschalek (Efficient Attention).',
-                card_4_h3: 'Role Projection & Identity',
-                card_4_p: 'Children name custom colors (e.g., "Rainbow Juice") and project identities as "artists, scientists, chefs, and dancers".',
-
-                gallery_title: 'Real Classroom Photo Records of "Flow of Color"',
-                gallery_desc: 'The following photos document Teacher Yu-Chuan Kao's classroom implementation at Datong Elementary School, evidencing the attention theories:',
-
-                p1_tag: 'Photo 1: Touch & Moderate Uncertainty',
-                p1_title: 'Sensory Touch Exploration of Fluid',
-                p1_desc: 'Children scoop starch fluid, feeling "cool, soft, flowing yet hardening" tactile stimuli (Berlyne 1971 Moderate Uncertainty).',
-
-                p2_tag: 'Photo 2: Color Mixing & Aesthetic Exploration',
-                p2_title: '"Rainbow Juice" Mixing & Naming',
-                p2_desc: 'Children mix pigments and starch in containers, observing color transformations and naming their creation "Rainbow Juice".',
-
-                p3_tag: 'Photo 3: Controlled Attention Development',
-                p3_title: 'Tool Operation & Flow Control',
-                p3_desc: 'Children focus on material blending and dripping techniques (Schneider & Shiffrin 1977 Controlled Attention), mastering water ratios.',
-
-                p4_tag: 'Photo 4: Automatic Creation & Flow',
-                p4_title: 'Marble-Pattern Flow Artwork',
-                p4_desc: 'Children advance to automated color mixing, entering a "Flow" state leaving graceful marbled patterns on paper.',
-
-                p5_tag: 'Photo 5: Creative Attention Flexibility',
-                p5_title: 'Focused Dripping & Role Projection',
-                p5_desc: 'Children flexibly shift between observing fluid behavior and imaginative associations (Marschalek 1983 Attention Flexibility).',
-
-                p6_tag: 'Photo 6: Life Experience & Role Connection',
-                p6_title: '"I am a Scientist, Chef, and Artist"',
-                p6_desc: 'Sitting on the floor exploring solid-fluid transitions, children connect experiences to batter and juice, establishing artistic identity.',
-
-                s1_title: '1. Theoretical Background & Practice Positioning',
-                s1_desc: 'This practice is grounded in Chapter 2 of "Early Childhood Art" by Prof. Feng-Jung Liu and Assoc. Prof. Wen-Ling Ho, realized in kindergarten by Teacher Yu-Chuan Kao:',
-                s1_c1_title: '🏛️ 1. Core Proposition by Prof. Liu & Assoc. Prof. Ho',
-                s1_c1_li1: '<strong>Hierarchy: "Value Theory → Teleology → Methodology":</strong> Pedagogy (how to teach) must rest on purpose (what to teach), derived from values (why to teach).',
-                s1_c1_li2: '<strong>Spirituality-Oriented Holistic Art Education:</strong> Integrates intrinsic value (aesthetic experience) and extrinsic value (art therapy/social functions) to achieve Truth, Goodness, Beauty, and Holiness.',
-                s1_c1_li3: '<strong>Aesthetic Capability Cultivation:</strong> Emphasizes holistic physical-mental-spiritual growth, self-understanding, and proper development through exploration, creation, response, and appreciation.',
-                s1_c2_title: '🌱 2. Practical Positioning by Teacher Yu-Chuan Kao',
-                s1_c2_li1: '<strong>Focus on Tactile & Color Perception:</strong> Responds to Value Theory's emphasis on sensory awareness using non-Newtonian fluids (cornstarch, water, glue).',
-                s1_c2_li2: '<strong>Process & Quality-Oriented Thinking:</strong> Positions learning around "exploring changes, practicing control, attempting creation" over static end-products.',
-                s1_c2_li3: '<strong>Supported by Cognitive Attention Theories:</strong> Translates abstract values into concrete activities via Berlyne (visual stimuli), Schneider & Shiffrin (flow), and Marschalek (efficient attention).',
-                s1_summary: '💡 <strong>Summary:</strong> "Flow of Color" translates Prof. Liu's "Spirituality-Oriented Holistic Art Education" into operable, observable sensory exploration for kindergarteners.',
-
-                s2_title: '2. Core Learning Materials: Imagery & Theory Alignment',
-                s2_desc: 'Prof. Liu posits that art inquiry stems from "Non-verbal Imagery" and "Verbal Theories". In "Flow of Color", these materials interweave:',
-                s2_c1_title: '1. Imagery Materials Practice',
-                s2_c1_li1: '<strong>External Imagery:</strong> Fluid lines, wateriness, color dripping effects, and glue viscosity.',
-                s2_c1_li2: '<strong>Internal Imagery & Tactile Perception:</strong> Touch sensations (cool, soft, fluffy) and kinesthetic feedback (soft pressure flows, hard pressure turns solid).',
-                s2_c1_quote: 'Child's Words: "The starch feels warm, relaxed, cool, and soft to touch."',
-                s2_c2_title: '2. Theoretical Materials Practice',
-                s2_c2_li1: '<strong>Aesthetic & Psychological Theories:</strong> Integrated aesthetic judgment cognitive models (Berlyne, Schneider & Shiffrin, Marschalek).',
-                s2_c2_li2: '<strong>Natural Science & Life Connections:</strong> Non-Newtonian fluid principles and associations (beaches, batter, juice, slime).',
-                s2_c2_quote: 'Child's Role: "I feel like an artist, a dancer, and a scientist when doing this!"',
-
-                s3_title: '3. Three Cognitive Attention Theories in "Flow of Color"',
-                s3_desc: 'The curriculum bridges attention training and creativity by fusing three cognitive theories:',
-                s3_card_main_h3: '💡 Prof. Liu's Note: Significance of Attention Modes & Pedagogy',
-                s3_card_main_p: 'Prof. Liu highlights that art education hinges on guiding learners from automatic to controlled attention to achieve genuine learning outcomes:',
-                s3_m1_title: '1. Automatic Attention Mode',
-                s3_m1_desc: '<strong>Core Definition:</strong> Triggered purely by external physical stimuli.<br><strong>Classroom Manifestation:</strong> Children are passively drawn to starch touch and fluid color movement.',
-                s3_m2_title: '2. Controlled Attention Mode',
-                s3_m2_desc: '<strong>Core Definition:</strong> Triggered by internal sources (past learning/cognitive strategies). <strong>[Demonstrates Learning Outcome]</strong><br><strong>Classroom Manifestation:</strong> Children actively retrieve life experiences (batter/juice) and devise color-fixing strategies.',
-                s3_m3_title: '3. Learning Transition Key',
-                s3_m3_desc: '<strong>Core Philosophy:</strong> "Only through learning can one elevate from passive automatic attention to higher-level controlled attention."<br><strong>Educational Value:</strong> Open-ended questioning guides children to accomplish this cognitive leap smoothly.',
-                s3_acc_1_h: 'I. Berlyne (1971): Motivation & Aesthetic Exploration (Moderate Uncertainty)',
-                s3_acc_1_c: '<strong>Core View:</strong> Individuals are motivated by novel, complex, and uncertain stimuli.<br><strong>Classroom Practice:</strong> Non-Newtonian viscosity shifts spark sustained curiosity and color naming ("Rainbow Juice").',
-                s3_acc_2_h: 'II. Schneider & Shiffrin (1977): Automatic to Controlled Attention & Flow',
-                s3_acc_2_c: '<strong>Core View:</strong> Attention transitions from automatic to controlled, fostering a state of flow.<br><strong>Classroom Practice:</strong> Initial concentration on dripping techniques evolves into effortless, joyful "Flow" creation.',
-                s3_acc_3_h: 'III. Marschalek (1983): Attention Flexibility & Response Strategy',
-                s3_acc_3_c: '<strong>Core View:</strong> Learning response strategies yields efficient and flexible attention.<br><strong>Classroom Practice:</strong> Children shift seamlessly between observing fluid mechanics and imaginative roleplay.',
-
-                s4_title: '4. Action Research: "Flow of Color" Classroom Practice',
-                s4_desc: 'Prof. Liu notes that art action research operates on a "teacher-as-researcher" model. Teacher Yu-Chuan Kao implemented five cyclical phases:',
-                s4_p1_t: 'Self-Observation & Reflection',
-                s4_p1_d: 'Guiding tactile feeling: "How does starch feel?" (Soft, slippery, sticky).',
-                s4_p2_t: 'Identifying Questions & Direction',
-                s4_p2_d: 'Exploring fluid rules: "What happens when water is added?" (Settles down, hardens with pressure).',
-                s4_p3_t: 'Creation Plan & Solution',
-                s4_p3_d: 'Testing additives: "Why add glue?" (To bind colors onto paper upon drying).',
-                s4_p4_t: 'Performance & Practice Journey',
-                s4_p4_d: 'Pressure control & mixing: "Soft touch flows, hard touch solidifies", creating marble drip art.',
-                s4_p5_t: 'Outcome & Process Review',
-                s4_p5_d: 'Discussion & Role projection: "What does color look like? Who do you feel like?" (Chef, Artist, Scientist).',
-
-                s5_title: '5. Four Stages of Aesthetic Judgment: Eisner's Educational Criticism',
-                s5_desc: 'Eisner's Connoisseurship and Criticism are activated through teacher questioning, elevating children from automatic to controlled attention across four stages:',
-                s5_card_dual_h3: '💡 Prof. Liu's Guidance: Dual Application Levels of Art Connoisseurship & Criticism',
-                s5_card_dual_p: 'Prof. Liu emphasizes that Art Connoisseurship and Criticism serve two major applications in teaching and research:',
-                s5_dual_1_t: '1. Teacher Level: Qualitative Research on Learning Processes',
-                s5_dual_1_d: 'Applied by <strong>teachers conducting qualitative research on student learning processes/outcomes</strong>, serving as an observation method for psychological development.',
-                s5_dual_2_t: '2. Student Level: Criticism of Artwork & Material Phenomena',
-                s5_dual_2_d: 'Used by <strong>teachers guiding students to critique and reflect on artistic phenomena</strong> (such as non-Newtonian fluid behaviors), achieving perceptual re-education.',
-                s5_eisner_1_h: 'Art Connoisseurship <span class="badge">Child Quality Perception & Teacher Research</span>',
-                s5_eisner_1_p: 'Children sense subtle quality interactions ("hard under pressure, liquid when released") while teachers document development from a connoisseur's lens.',
-                s5_eisner_2_h: 'Art Criticism <span class="badge">Material Phenomena Criticism & Language Reconstruction</span>',
-                s5_eisner_2_p: 'Teachers guide dialogue on material behaviors, transforming tactile experiences among the five senses into public language and color stories.',
-                s5_sub_h3: '"Flow of Color" Eisner's 4 Stages & Controlled Attention Prompts:',
-                s5_st1_t: '1. Description',
-                s5_st1_g: '[Goal] Objective Observation & Sensory Texture Awareness',
-                s5_st1_c: '<strong style="color: var(--text-primary);">💬 Teacher Prompt:</strong><br>"What do you see when grabbing starch water? What happens when you let go?"<br><br><strong style="color: var(--text-primary);">👦 Child Response:</strong><br>"Squeezing tight feels hard like a stone, but opening my hand makes it slip through fingers like water!"',
-                s5_st2_t: '2. Analysis',
-                s5_st2_g: '[Goal] Relationship Exploration & Structural Regularities',
-                s5_st2_c: '<strong style="color: var(--text-primary);">💬 Teacher Prompt:</strong><br>"Why does starch turn hard and flow? How did you discover pigment spreading rules with glue?"<br><br><strong style="color: var(--text-primary);">👦 Child Response:</strong><br>"Particles hold hands tight when squeezed! Glue keeps color on paper when dry, and pigment drips spread like marble!"',
-                s5_st3_t: '3. Interpretation',
-                s5_st3_g: '[Goal] Imagery Association, Experience Retrieval & Meaning Construction',
-                s5_st3_c: '<strong style="color: var(--text-primary);">💬 Teacher Prompt:</strong><br>"What does this touch remind you of in life? Who do you feel like during exploration?"<br><br><strong style="color: var(--text-primary);">👦 Child Response:</strong><br>"It reminds me of mom making batter and summer rainbow juice! I feel like a scientist and artist exploring nature!"',
-                s5_st4_t: '4. Evaluation',
-                s5_st4_g: '[Goal] Value Judgment, Emotional Response & Aesthetic Reflection',
-                s5_st4_c: '<strong style="color: var(--text-primary);">💬 Teacher Prompt:</strong><br>"Which part of your drip artwork do you like most? How does it make you feel?"<br><br><strong style="color: var(--text-primary);">👦 Child Response:</strong><br>"I love the green swirl made by blue and yellow! Watching colors flow freely makes me feel calm and accomplished!"',
-
-                s6_title: '6. Comparative Analysis: "Flow of Color" vs. Value Theory & Educational Approaches',
-                s6_desc: 'Analyzing Teacher Yu-Chuan Kao's practice against Chapter 2 of "Early Childhood Art" (Liu & Ho):',
-                s6_th1: 'Theoretical Dimension',
-                s6_th2: 'Core Interpretation',
-                s6_th3: 'Practice Comparison in "Flow of Color"',
-                s6_r1_c1: '<strong>1. Intrinsic vs. Extrinsic Values</strong>',
-                s6_r1_c2: '<strong>Intrinsic:</strong> Aesthetic experience at core, focusing on sensory perception and imagery.<br><strong>Extrinsic:</strong> Catalyst for emotional catharsis, creativity, and motor control.',
-                s6_r1_c3: '<strong style="color: var(--accent-sage);">[Intrinsic]</strong> Experiencing unique touch and naming "Rainbow Juice".<br><strong style="color: var(--accent-blue);">[Extrinsic]</strong> Releasing emotions through squeezing and refining muscle control.',
-                s6_r2_c1: '<strong>2. Essential Human Values: Truth, Goodness, Beauty, Holiness</strong>',
-                s6_r2_c2: '<strong>Truth:</strong> Insight into nature laws.<br><strong>Goodness:</strong> Self-awareness & identity.<br><strong>Beauty:</strong> Aesthetic harmony.<br><strong>Holiness:</strong> Spiritual fulfillment.',
-                s6_r2_c3: '<strong style="color: var(--accent-amber);">[Truth]</strong> Exploring fluid mechanics.<br><strong style="color: var(--accent-sage);">[Goodness]</strong> Projecting roles (Artist/Scientist).<br><strong style="color: var(--accent-terracotta);">[Beauty]</strong> Savoring color fusion.<br><strong style="color: var(--accent-mauve);">[Holiness]</strong> Reaching "Flow" state.',
-                s6_r3_c1: '<strong>3. Integration of Three Orientations</strong>',
-                s6_r3_c2: 'Child-centered (SCAE), Discipline-based (DBAE), and Issue/Life-connected.',
-                s6_r3_c3: '<strong style="color: var(--accent-blue);">[Child]</strong> Free choice of pigment.<br><strong style="color: var(--accent-mauve);">[Discipline]</strong> Eisner criticism stages.<br><strong style="color: var(--accent-sage);">[Life]</strong> Linking to batter and juice.',
-                s6_r4_c1: '<strong>4. Spirituality-Oriented Holistic Education</strong>',
-                s6_r4_c2: 'Emphasizes "emergence of wholeness", integrating body, mind, and spirit.',
-                s6_r4_c3: '<strong style="color: var(--accent-sage);">Art & Science Integration:</strong> Merging physics with art for holistic growth.',
-                s6_r5_c1: '<strong>5. Preschool Curriculum Alignment</strong>',
-                s6_r5_c2: 'Exploration, Expression/Creation, Response/Appreciation.',
-                s6_r5_c3: '<strong style="color: var(--accent-blue);">[Mei-1-2]</strong> Sensory touch.<br><strong style="color: var(--accent-sage);">[Mei-2-1]</strong> Drip creation.<br><strong style="color: var(--accent-amber);">[Mei-3-1]</strong> Role response.',
-
-                s7_title: '7. Conclusion & Pedagogical Suggestions for Teachers',
-                s7_h3: '💡 5 Suggestions Grounded in Liu & Ho's Theory and "Flow of Color" Practice:',
-                s7_li1: '<strong>Focus on Sensory Experience over End Products:</strong> Emphasize guiding children to feel material changes (cool, soft, flowing yet hardening).',
-                s7_li2: '<strong>Create Environments of "Moderate Uncertainty":</strong> Leverage non-Newtonian fluid novelty (Berlyne) to spark curiosity.',
-                s7_li3: '<strong>Utilize Roleplay to Understand Roles & Self:</strong> Guide children to roleplay artists, chefs, and scientists to inspire self-trait recognition.',
-                s7_li4: '<strong>Guide Shift from Automatic to Controlled Attention:</strong> Use open-ended prompts (Schneider & Shiffrin) to help children enter "Flow".',
-                s7_li5: '<strong>Integrate Art into Daily Life Experience:</strong> Connect color textures with batter, juice, and candy to solidify abstract concepts.'
-            },
-            'ja': {
-                site_title: '幼児美術教育価値論と『色彩の流れ』実践の対比探析',
-                nav_1: '1. 理論的背景と実践的位置づけ',
-                nav_2: '2. イメージと理論的素材',
-                nav_3: '3. 三つの認知注意理論',
-                nav_gallery: '📷 授業風景写真記録',
-                nav_4: '4. 『色彩の流れ』アクションリサーチ',
-                nav_5: '5. 審美判断の4つのプロセス',
-                nav_6: '6. 価値論と教育アプローチの分析',
-                nav_7: '7. 結論と指導上の提言',
-
-                hero_tag_theory: '理論的基盤：劉豐榮 教授、何文玲 副教授',
-                hero_tag_practice: '授業実践：高玉娟 先生（嘉義市立大同國小）',
-                hero_h1: '幼児美術教育の価値論・目的・アプローチ：<br><span style="color: var(--accent-sage);">年長児『色彩の流れ』触覚カリキュラムの理論的対比</span>',
-                hero_desc: '本ウェブサイトは、劉豐榮教授・何文玲副教授共著『幼児美術』第2章（価値論・目的・アプローチ）と、高玉娟先生が実施した『色彩の流れ』触覚授業実践を学術的に統合したものです。',
-                hero_meta_1: '📚 理論的枠組み：<strong>前述著者『幼児美術』第2章「幼児美術教育の価値論、目的とアプローチ」</strong>',
-                hero_meta_2: '🏫 実践授業案：<strong>高玉娟 先生『色彩の時を彷徨う－触覚編：色彩の流れ』</strong> (2025)',
-                keywords_label: '🔑 核心キーワード (6個)：',
-                kw_1: '質的研究',
-                kw_2: '視覚芸術創作',
-                kw_3: '美術鑑賞と批評',
-                kw_4: '非ニュートン流体',
-                kw_5: 'フロー体験',
-                kw_6: '創造的注意の柔軟性',
-
-                card_1_h3: '理論と実践の有機的結合',
-                card_1_p: '「美術教育価値論」の機能が授業で具現化され、非ニュートン流体の操作が幼児の高度な認知と思考を示します。',
-                card_2_h3: '非ニュートン流体の感官探索',
-                card_2_p: '片栗粉・水・白のりを組み合わせ、「冷たくて柔らかく、流れるが固まる」触覚の中で制御と創造を体験します。',
-                card_3_h3: '3大注意理論による裏付け',
-                card_3_p: 'Berlyne（適度な不確実性）、Schneider & Shiffrin（自動的注意から制御的注意フローへ）、Marschalek（効率的注意）を融合。',
-                card_4_h3: '役割の投影と自己アイデンティティ',
-                card_4_p: '調合した色に名前を付け（「虹のジュース」など）、「芸術家・科学者・料理人・ダンサー」として自己を投影します。',
-
-                gallery_title: '『色彩の流れ』年長児の実際の授業風景写真記録',
-                gallery_desc: '以下は高玉娟先生による授業風景写真で、『幼児美術』理論および3大認知注意心理学を実証するものです：',
-
-                p1_tag: '写真 1：触覚と適度な不確実性',
-                p1_title: '非ニュートン流体の触覚探索',
-                p1_desc: '園児が両手で片栗粉水をすくい、「冷たくて柔らかく、流れるが固まる」触覚刺激を体験します（Berlyne 1971）。',
-
-                p2_tag: '写真 2：混色と審美的探索',
-                p2_title: '「虹のジュース」調色と命名',
-                p2_desc: '絵の具と片栗粉を混ぜ合わせて色の変化を観察し、「虹のジュース」と命名して審美的探索を深めます。',
-
-                p3_tag: '写真 3：制御的注意の発達',
-                p3_title: '道具操作と滴下量のコントロール',
-                p3_desc: '滴下テクニックに注意を集中させ（Schneider & Shiffrin 1977 制御的注意）、水量と力の加減を学びます。',
-
-                p4_tag: '写真 4：自動的創作とフロー',
-                p4_title: 'マーブル模様の色彩流動作品',
-                p4_desc: '熟練した「自動的」な混色創作へと進み、「フロー (Flow)」状態に入って美しい流動模様を描きます。',
-
-                p5_tag: '写真 5：創造的注意の柔軟性',
-                p5_title: '流動観察と役割投影の集中',
-                p5_desc: '流体の観察と自由な想像の間を迅速に行き来し（Marschalek 1983）、創造的注意の柔軟性を示します。',
-
-                p6_tag: '写真 6：生活経験と役割体験',
-                p6_title: '「ぼくは科学者、料理人、芸術家」',
-                p6_desc: '床に座って流体と固体の変化を体感し、生地やジュースの経験と結びつけ、創作者としての自己を確立します。',
-
-                s1_title: '1. 理論的背景と実践的位置づけ',
-                s1_desc: '本実践は劉豐榮教授・何文玲副教授共著『幼児美術』第2章に基づき、高玉娟先生が幼稚園で具現化したものです：',
-                s1_c1_title: '🏛️ 1. 劉豐榮教授・何文玲副教授の核心理論',
-                s1_c1_li1: '<strong>「価値論 → 目的論 → 方法論」の階層的発展：</strong>教育方法（いかに教えるか）は教育目的（何を教えるか）に基づき、目的は価値観（なぜ教えるか）に由来する。',
-                s1_c1_li2: '<strong>精神指向の全人美術教育：</strong>芸術の「内在的価値（本質論：美の体験）」と「外在的価値（文脈論：芸術療法・社会機能）」を統合し、真善美聖の人間本質価値を実現する。',
-                s1_c1_li3: '<strong>美の領域能力の育成：</strong>探索・表現・応答・鑑賞を通じ、身体・心・精神の全体的発達と主体の自己認識および適正な発達を重視する。',
-                s1_c2_title: '🌱 2. 高玉娟先生『色彩の流れ』の実踐的位置づけ',
-                s1_c2_li1: '<strong>「触覚と色彩知覚」を主軸に：</strong>価値論が強調する感官自覚と美の体験に応じ、非ニュートン流体を媒介として使用。',
-                s1_c2_li2: '<strong>プロセスと品質思考指向：</strong>単なる完成品重視を脱却し、「変化の探索、制御の練習、創造の試み」という内面的関与に集中。',
-                s1_c2_li3: '<strong>認知・注意理論による支え：</strong>Berlyne（視覚刺激）、Schneider & Shiffrin（フロー）、Marschalek（効率的注意）を通じて具体化。',
-                s1_summary: '💡 <strong>まとめ：</strong>『色彩の流れ』は、劉教授が提唱する「精神指向の全人美術教育」を、観察・検証可能な感覚探索へと還元・転換した実践です。',
-
-                s2_title: '2. 幼児美術学習の核心素材：イメージと理論の対比',
-                s2_desc: '劉教授は、美術探求の素材は「非言語的イメージ」と「言語的理論」からなると提唱します。本授業では以下のように交錯します：',
-                s2_c1_title: '1. イメージ素材 (Images) の実践',
-                s2_c1_li1: '<strong>外在的イメージ：</strong>流体の線、水性の変化、絵の具の滴下効果、のりの粘度。',
-                s2_c1_li2: '<strong>内在的イメージと触覚知覚：</strong>触覚（冷たい、柔らかい）や運動感覚（力を抜くと流れ、入れると固まる）、および心理的感情のイメージ。',
-                s2_c1_quote: '園児の言葉：「片栗粉を触ると、温かくてリラックスして、冷たくて柔らかい感じがする。」',
-                s2_c2_title: '2. 理論的素材 (Theories) の実践',
-                s2_c2_li1: '<strong>美學・心理學理論：</strong>Berlyne、Schneider & Shiffrin、Marschalekの審美判断認知モデルの導入。',
-                s2_c2_li2: '<strong>自然科學與生活連結：</strong>流体力学の法則探索と、日常の連想（砂浜、生地、ジュース、スライム）。',
-                s2_c2_quote: '園児の役割投影：「操作しているとき、自分が芸術家や科学者やダンス家になった気分！」',
-
-                s3_title: '3. 『色彩の流れ』が依拠する3大認知注意理論',
-                s3_desc: '本授業案は注意力の育成と創造性の発展を結びつけ、3つの認知心理学理論を融合させています：',
-                s3_card_main_h3: '💡 劉豐榮教授の特別注記：《注意モードの意義》と教育的転換',
-                s3_card_main_p: '劉教授は、美術指導の鍵は学習者を「制御的注意」へと導くことにあり、それによって初めて学習の成果が現れると指摘します：',
-                s3_m1_title: '1. 自動的注意モード (Automatic Attention)',
-                s3_m1_desc: '<strong>定義：</strong>外在的な物理的刺激のみによって誘発される。<br><strong>授業の現れ：</strong>園児が片栗粉水の感触や色の流動という物理刺激に惹きつけられる状態（受動的探索）。',
-                s3_m2_title: '2. 制御的注意モード (Controlled Attention)',
-                s3_m2_desc: '<strong>定義：</strong>内在的な記憶や認知戦略によって誘発される。<strong>【学習の成果を示す】</strong><br><strong>授業の現れ：</strong>過去の生活経験（生地・ジュース）を思い出し、調色や固定の工夫を能動的に考える。',
-                s3_m3_title: '3. 学習転換の鍵 (Learning Transition)',
-                s3_m3_desc: '<strong>核心的哲学：</strong>「学習を通じてのみ、受動的な自動的注意から高次元の制御的注意へと到達できる。」<br><strong>教育的価値：</strong>問いかけにより、園児の注意力の飛躍的成長をスムーズに促す。',
-                s3_acc_1_h: '一、Berlyne (1971)：動機付けと審美探索（適度な不確実性）',
-                s3_acc_1_c: '<strong>核心的觀點：</strong>斬新で複雑な刺激に対して探索動機が生じる。<br><strong>授業実践：</strong>非ニュートン流体の粘度変化と混色が興味を持続させ、「虹のジュース」などの命名につながる。',
-                s3_acc_2_h: '二、Schneider & Shiffrin (1977)：自動的注意から制御的注意へ、商してフロー体験へ',
-                s3_acc_2_c: '<strong>核心的觀點：</strong>注意が自動から制御へと進み、フロー状態が生まれる。<br><strong>授業実践：</strong>技術の習得に伴い自律的な注意運用へと至り、没頭した「フロー」状態で創作を行う。',
-                s3_acc_3_h: '三、Marschalek (1983)：注意の柔軟性と反応戦略学習',
-                s3_acc_3_c: '<strong>核心的觀點：</strong>反応戦略の学習が効率的で柔軟な注意力をもたらす。<br><strong>授業実践：</strong>流体の観察と自由な想像の間を迅速に行き来し、多次元の注意の柔軟性を示す。',
-
-                s4_title: '4. 授業アクションリサーチ：『色彩の流れ』の実踐',
-                s4_desc: '劉教授は美術教育実践を「研究者＝行動者」の探究モデルとして位置づけます。高玉娟先生は以下の5段階で循環実践を行いました：',
-                s4_p1_t: '自己観察と検証',
-                s4_p1_d: '手触りの体感：「片栗粉を触るとどんな感じ？」（柔らかい、すべすべ、ねばねば）。',
-                s4_p2_t: '課題と方向性の発見',
-                s4_p2_d: '法則の観察：「水を加えるとどう変わる？」（沈殿する、多く入れると硬くなる）。',
-                s4_p3_t: '創作計画と案の策定',
-                s4_p3_d: '添加物の実験：「なぜ白のりを混ぜるの？」（乾いた後も色を紙に残すため）。',
-                s4_p4_t: '表現と実践プロセス',
-                s4_p4_d: '力加減と混色：「優しく触ると流れ、強く押すと固まる」、滴下創作と色への命名。',
-                s4_p5_t: '成果とプロセスの振り返り',
-                s4_p5_d: '対話と役割投影：「何に見える？自分は誰になった気分？」（料理人、芸術家、科學家）。',
-
-                s5_title: '5. 審美判断の4つのプロセス：Eisnerの教育批評觀',
-                s5_desc: 'Eisnerの「芸術鑑賞」と「芸術批評」は、教師の問いかけを通じて自動的注意から制御的注意へと高められ、4つのプロセスを展開します：',
-                s5_card_dual_h3: '💡 劉豐榮教授の特別指導：美術鑑識と批評の二重応用レベル',
-                s5_card_dual_p: '劉教授は、「美術鑑識と批評」には教育と研究において2つの重要な応用側面があると強調します：',
-                s5_dual_1_t: '1. 教師側：学習プロセスの質的研究方法',
-                s5_dual_1_d: '主に<strong>教師が児童の学習過程や結果に対して質的研究を行う</strong>際の、心理発達の観察・記録手法として適用される。',
-                s5_dual_2_t: '2. 児童側：作品やメディア現象への批評指導',
-                s5_dual_2_d: '教師がこのステップを用いて<strong>児童に作品や芸術現象（非ニュートン流体の特性等）を批評・反省させる</strong>指導を行う。',
-                s5_eisner_1_h: '芸術鑑賞 (Connoisseurship & Appreciation) <span class="badge">園児の品質感知と教師の質的觀察</span>',
-                s5_eisner_1_p: '園児が片栗粉の流動性を手のひらで鋭く感じ取ると同時に、教師も鑑識の視点から発達を観察記録します。',
-                s5_eisner_2_h: '芸術批評 (Art Criticism) <span class="badge">メディア現象批評言語言語再構築</span>',
-                s5_eisner_2_p: '流体の変化や自身の創作について対話し、《五感における触覚》の体験を公的な言語と色の物語へと転換します。',
-                s5_sub_h3: '『色彩の流れ』Eisnerの4段階と制御的注意の問いかけ実践：',
-                s5_st1_t: '1. 記述 (Description)',
-                s5_st1_g: '【目標】客観的觀察と感覚的質観の気づき',
-                s5_st1_c: '<strong style="color: var(--text-primary);">💬 教師の問いかけ：</strong><br>「片栗粉水を両手ですくった時、何が見えた？手を緩めるとどうなった？」<br><br><strong style="color: var(--text-primary);">👦 園児の応答：</strong><br>「強く握ると石みたいに固いけど、力を抜くと指の隙間から水みたいに流れる！」',
-                s5_st2_t: '2. 分析 (Analysis)',
-                s5_st2_g: '【目標】関係探求と材質構造の法則性',
-                s5_st2_c: '<strong style="color: var(--text-primary);">💬 教師の問いかけ：</strong><br>「なぜ固くなったり流れたりするの？のりを混ぜた時と色が広がる法則は？」<br><br><strong style="color: var(--text-primary);">👦 園児の応答：</strong><br>「ギューッと押すと粒の手と手が繋がって固くなる！のりは乾いて紙に残すためで、マーブルみたいに広がるよ！」',
-                s5_st3_t: '3. 解釈 (Interpretation)',
-                s5_st3_g: '【目標】イメージの連想・経験の引き出しと意味の構築',
-                s5_st3_c: '<strong style="color: var(--text-primary);">💬 教師の問いかけ：</strong><br>「この色や手触りは普段のどんな体験を思い出す？探求している時自分は誰になった気分？」<br><br><strong style="color: var(--text-primary);">👦 園児の応答：</strong><br>「お母さんが生地を捏ねる時や夏に飲むジュース！自然を調べる科学者や芸術家になった気分！」',
-                s5_st4_t: '4. 評価 (Evaluation)',
-                s5_st4_g: '【目標】価値判断・感情的応答と美の振り返り',
-                s5_st4_c: '<strong style="color: var(--text-primary);">💬 教師の問いかけ：</strong><br>「今回の絵の具作品で一番好きな部分はどこ？どんな気持ちがした？」<br><br><strong style="color: var(--text-primary);">👦 園児の応答：</strong><br>「青と黄が混ざった黄緑の流れる線が好き！色が自由に流れるのを見ると、心が落ち着いて達成感がある！」',
-
-                s6_title: '6. 分析対比：『色彩の流れ』vs 第2章「価値論・目的・アプローチ」',
-                s6_desc: '劉教授・何副教授の理論枠組みに基づき、高玉娟先生の授業実践を比較分析します：',
-                s6_th1: '第2章理論的次元',
-                s6_th2: '核心的理論の解釈',
-                s6_th3: '『色彩の流れ』授業実践との比較',
-                s6_r1_c1: '<strong>1. 内在的價值 vs. 外在的價值</strong>',
-                s6_r1_c2: '<strong>内在的：</strong>美の体験が核心で、感覚の気づきと満足を強調。<br><strong>外在的：</strong>情緒の発散、創造性、運動能力の促進。',
-                s6_r1_c3: '<strong style="color: var(--accent-sage);">[内在]</strong> 独自の触覚を感じ「虹のジュース」と命名。<br><strong style="color: var(--accent-blue);">[外在]</strong> 捏ねる動作で感情を発散し筋肉を精練。',
-                s6_r2_c1: '<strong>2. 人間本質価値：真・善・美・聖</strong>',
-                s6_r2_c2: '<strong>真：</strong>自然法則の探求。<br><strong>善：</strong>自己覚察と役割認同。<br><strong>美：</strong>美の調和。<br><strong>聖：</strong>全人的精神の成就。',
-                s6_r2_c3: '<strong style="color: var(--accent-amber);">[真]</strong> 流体力学の法則を探求。<br><strong style="color: var(--accent-sage);">[善]</strong> 役割投影（科学者/芸術家）。<br><strong style="color: var(--accent-terracotta);">[美]</strong> 色彩の融合を味わう。<br><strong style="color: var(--accent-mauve);">[聖]</strong> 「フロー」状態の達成。',
-                s6_r3_c1: '<strong>3. 3つの教育アプローチの統合</strong>',
-                s6_r3_c2: '児童中心（SCAE）、教科中心（DBAE）、生活・テーマ連結。',
-                s6_r3_c3: '<strong style="color: var(--accent-blue);">[児童]</strong> 自由な絵の具の選択。<br><strong style="color: var(--accent-mauve);">[教科]</strong> Eisnerの批評4段階。<br><strong style="color: var(--accent-sage);">[生活]</strong> 生地やジュースへの連想。',
-                s6_r4_c1: '<strong>4. 現代の精神指向の全人美術教育</strong>',
-                s6_r4_c2: '「全体性の発現」を強調し、身体・心・精神を統合。',
-                s6_r4_c3: '<strong style="color: var(--accent-sage);">芸術と科学の統合：</strong>物理現象の探求を美術操作に融合した全人的発達。',
-                s6_r5_c1: '<strong>5. 幼児教育要領美の領域との整合</strong>',
-                s6_r5_c2: '探索・表現・応答の能力と、感性・メディアの側面。',
-                s6_r5_c3: '<strong style="color: var(--accent-blue);">[美1-2]</strong> 五感による感知。<br><strong style="color: var(--accent-sage);">[美2-1]</strong> 混色滴下創作。<br><strong style="color: var(--accent-amber);">[美3-1]</strong> 役割と好みへの応答。',
-
-                s7_title: '7. 結論と幼稚園教諭への指導上の提言',
-                s7_h3: '💡 理論と実践に基づく5つの指導提言：',
-                s7_li1: '<strong>成果物よりも感官体験に集中する：</strong>材料の変化を五感で感じる指導に重点を置き、自由な操作を励ます。',
-                s7_li2: '<strong>「適度な不確実性」の環境を創出する：</strong>非ニュートン流体の新奇性（Berlyne）を活用し、好奇心を刺激する。',
-                s7_li3: '<strong>ごっこ遊びを通じた役割と自己の理解：</strong>芸術家や料理人を演じさせ、自己の特性への気づきを促す。',
-                s7_li4: '<strong>「自動的注意」から「制御的注意」へ導く：</strong>問いかけ（Schneider & Shiffrin）を通じて経験を引き出し、「フロー」へと導く。',
-                s7_li5: '<strong>美術を生活と結びつける：</strong>感触を「生地、ジュース、キャンディ」と結びつけ、抽象的体験を具現化する。'
-            }
-        };
-
-        function switchLang(lang) {
-            if (!i18nData || !i18nData[lang]) return;
-            
-            // Highlight active button safely using data-lang
-            const buttons = document.querySelectorAll('.lang-btn');
-            buttons.forEach(btn => {
-                const bLang = btn.getAttribute('data-lang');
-                if (bLang === lang) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-
-            // Update textContent elements
-            const textEls = document.querySelectorAll('[data-i18n]');
-            textEls.forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (key && i18nData[lang][key]) {
-                    el.textContent = i18nData[lang][key];
-                }
-            });
-
-            // Update innerHTML elements
-            const htmlEls = document.querySelectorAll('[data-i18n-html]');
-            htmlEls.forEach(el => {
-                const key = el.getAttribute('data-i18n-html');
-                if (key && i18nData[lang][key]) {
-                    el.innerHTML = i18nData[lang][key];
-                }
-            });
-
-            try {
-                localStorage.setItem('pref_lang', lang);
-            } catch(e) {}
-        }
-
-        // Accordion functionality
+        // Accordion 折疊選單互動
         document.querySelectorAll('.accordion-header').forEach(button => {
             button.addEventListener('click', () => {
                 const item = button.parentElement;
@@ -1813,7 +1864,7 @@
             });
         });
 
-        // Smooth scroll
+        // 平滑捲動錨點
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1825,16 +1876,6 @@
                     });
                 }
             });
-        });
-
-        // Auto load saved language
-        window.addEventListener('DOMContentLoaded', () => {
-            try {
-                const savedLang = localStorage.getItem('pref_lang') || 'zh-TW';
-                if (savedLang !== 'zh-TW') {
-                    switchLang(savedLang);
-                }
-            } catch(e) {}
         });
     </script>
 </body>
